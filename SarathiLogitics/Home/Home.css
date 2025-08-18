@@ -172,7 +172,7 @@ body {
   padding: 0.75rem;
   background: none;
   border: none;
-  border-radius: 2rem;
+  border-radius: 2rem 0rem 0rem 2rem;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s;
@@ -183,6 +183,15 @@ body {
   color: white;
 }
 
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -191,6 +200,16 @@ body {
   position: relative;
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto; 
+  color: rgb(8, 166, 8);
+  cursor: pointer;
 }
 
 .form-input {
@@ -206,6 +225,7 @@ body {
   outline: none;
   border-color: var(--red-primary);
 }
+
 
 .btn-primary {
   width: 100%;

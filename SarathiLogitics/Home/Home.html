@@ -67,6 +67,7 @@
               <button class="tab-btn" onclick="switchTab('track')">Track Order</button>
             </div>
 
+            <!-- Ship Order Tab -->
             <div id="ship-tab" class="tab-content active">
               <h3>Ship your order through</h3>
               <div class="form-group">
@@ -75,6 +76,7 @@
                   <input type="text" placeholder="Enter pickup address" class="form-input">
                 </div>
                 <div class="input-wrapper">
+                  <i class="fa-solid fa-location-dot"></i>
                   <input type="text" placeholder="Enter delivery address" class="form-input">
                 </div>
               </div>
@@ -84,7 +86,19 @@
               </p>
             </div>
 
+            <!-- Track Order Tab -->
+            <div id="track-tab" class="tab-content">
+              <h3>Track your order through</h3>
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-hashtag"></i>
+                  <input type="text" placeholder="Enter CN number" class="form-input">
+                </div>
+              </div>
+              <button class="btn-primary">Track Order</button>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -377,5 +391,7 @@
   // Run when page loads
   animateCounters();
 </script>
+
+<script src="./Home.js"></script>
 
 </html>

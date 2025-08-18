@@ -78,10 +78,13 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--red-primary), #b91c1c);
+  background: url("../Assets/HeroSection.jpg") center/cover no-repeat;
   color: var(--white-color);
-  padding: 3rem 0;
+  padding: 2rem 0;
   overflow: hidden;
+  margin-inline: 3rem;
+  margin-block: 2rem;
+  border-radius: 2rem;
 }
 
 .hero-content {
@@ -97,7 +100,7 @@ body {
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -105,7 +108,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-header .main {
@@ -125,7 +128,6 @@ body {
 .form-container {
   display: flex;
   gap: 40px;
-  padding-top: 10px;
 }
 
 .form-container h3 {
@@ -162,8 +164,8 @@ body {
 }
 
 .form-input {
-  width: 100%;
-  padding: 0.8rem;
+  width: 18rem;
+  padding: 0.6rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -171,7 +173,7 @@ body {
 }
 
 .form-input::placeholder {
-  color: #cacaca;
+  color: #dedede;
 }
 
 .form-input:focus {
@@ -180,7 +182,7 @@ body {
 }
 
 .btn-primary {
-  width: 100%;
+  width: 50%;
   padding: 0.75rem;
   background: linear-gradient(to right, var(--red-primary), #ff5959);
   color: var(--white-color);
@@ -190,11 +192,15 @@ body {
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
-  transition: background 0.3s;
 }
 
 .btn-primary:hover {
   background: var(--red-primary);
+}
+
+.book-btn{
+  justify-content: center;
+  text-align: center;
 }
 
 .form-footer {
@@ -223,7 +229,7 @@ body {
 
 /* How It Works */
 .how-it-works {
-  padding: 5rem 2rem;
+  padding: 2rem;
 }
 
 .section-title {
@@ -240,21 +246,21 @@ body {
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
   justify-items: center;
 }
 
 .step {
   text-align: left;
-  max-width: 20rem;
+  max-width: 22rem;
 }
 
 .step-img {
-  height: 15rem;
+  height: 1;
   width: 100%;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   margin-bottom: 1rem;
+  box-shadow: 1px 3px 2px 2px rgba(143, 143, 143, 0.25);
 }
 
 .step-title {
@@ -275,18 +281,19 @@ body {
 
 /* Testimonials */
 .review {
+  padding: 2rem;
+}
+
+.review-container{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  padding: 5rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-inline: 6rem;
+  padding-top: 2rem;
+  gap: 2rem;
 }
 
 .review-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   height: 25rem;
   object-fit: cover;
   border-radius: 10px;
@@ -338,12 +345,20 @@ body {
   margin: 0.25rem 0;
 }
 
+.review-wrapper,
+.newsletter-wrapper {
+  position: relative;
+}
+
 .bg-temple {
+  position: absolute;
+  top: 5rem;
+  left: 0;
   width: 100%;
-  max-width: 1521px;
-  height: auto;
-  display: block;
-  margin: 2rem auto;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15; /* subtle background */
+  z-index: 0;
 }
 
 /* Newsletter */

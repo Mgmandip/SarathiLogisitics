@@ -116,8 +116,6 @@ body {
   display: block;
 }
 
-
-
 /* Hero Section */
 .hero {
   background: url("./Assets/HeroSection.jpg") center/cover no-repeat;
@@ -424,14 +422,32 @@ body {
   color: #667B99;
 }
 
-.service-div {
-  padding: 80px;
+.service-wrapper{
+  padding-inline: 2rem;
+  padding-block: 3rem;
 }
+
+.service-wrapper,
+.newsletter-wrapper {
+  position: relative;
+}
+
+.bg-temple {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15; /* subtle background */
+  z-index: 0;
+}
+
 
 .service-container {
   display: flex;
   justify-content: space-between;
-  padding-inline: 4rem;
+  padding-inline: 7rem;
 }
 
 .service-one {

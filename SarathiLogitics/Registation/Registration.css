@@ -77,9 +77,9 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--red-primary), #b91c1c);
+  background: url("../Assets/HeroSection.jpg") center/cover no-repeat;
   color: white;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   overflow: hidden;
   margin-inline: 3rem;
   margin-block: 2rem;

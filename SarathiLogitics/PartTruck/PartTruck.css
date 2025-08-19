@@ -203,31 +203,28 @@ body {
   text-decoration: underline;
 }
 
-/* Express Parcel Delivery */
-.express-parcel {
+/* Part Truckload */
+.ptl-parcel {
   display: flex;
   padding-inline: 8rem;
   padding-top: 2rem;
   gap: 4rem;
 }
 
-.express-parcel .detail h1 {
+.ptl-parcel .detail h1 {
   font-weight: 500;
   border-bottom: 4px solid var(--red-primary);
   display: inline-block;
   color: var(--red-primary);
 }
 
-.express-parcel .detail h1 span {
-  color: var(--blue-dark);
-}
 
-.express-parcel .detail p {
+.ptl-parcel .detail p {
   padding-top: 1rem;
   color: #667B99;
 }
 
-.express-parcel img {
+.ptl-parcel img {
   height: 20rem;
   width: 30rem;
   background-color: var(--blue-dark);

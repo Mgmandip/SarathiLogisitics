@@ -79,51 +79,104 @@ body {
   color: white;
   padding: 2rem 0;
   overflow: hidden;
+  margin-inline: 3rem;
+  margin-block: 2rem;
+  border-radius: 1rem;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 1rem;
   text-align: center;
 }
 
-/* About Sarathi */
-.about-container {
+/* AboutUS Conainer */
+.aboutus-container {
   display: flex;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  justify-content: space-between; 
+}
+
+
+.left-container {
+  flex: 0 0 27rem; 
+}
+
+
+/* Sidebar */
+.sidebar{
+  max-width: 20rem;
+  margin-inline: 3rem;
+  margin-block: 2rem;
+  box-shadow: 3px 3px 3px 2px rgba(143, 143, 143, 0.5);
+  border-radius: 0.5rem;
+  background-color: white;
+  position: sticky;
+  top: 6rem; 
+  height: fit-content;
+}
+
+.sidebar-content{
+  border-radius: 1rem;
+}
+
+.sidebar h1{
+  font-size: large;
+  font-weight: 400;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.sidebar .sidebar-one{
+  background-color: #CDD2E3;
+}
+
+
+/* About Sarathi*/
+.about{
+  display: flex;
   padding-top: 2rem;
+  gap: 4rem;
+  align-items: center;
 }
 
-.about-detail {
+.about .detail h1 {
   font-weight: 500;
-  border-bottom: 4px solid #FF3131;
+  border-bottom: 4px solid var(--red-primary);
   display: inline-block;
+  color: var(--red-primary);
 }
 
-.about-detail h1 {
-  font-weight: 500;
-  border-bottom: 4px solid #FF3131;
-  display: inline-block;
+.about .detail p {
+  padding-top: 1rem;
+  color: #667B99;
+  max-width: 35rem;
+  text-align: justify;
 }
 
-.about-detail h1 span {
-  color: #FF3131;
+.about img {
+  height: 18rem;
+  width: 25rem;
+  background-color: var(--blue-dark);
+  border-radius: 5px 40px;
+  box-shadow: 5px 3px 5px 2px rgba(143, 143, 143, 1);
 }
 
 /* Mission */
 .mission-container {
-  padding: 5rem
+  padding-block: 5rem;
+  padding-right: 4rem;
 }
 
 .mission-detail {
-  height: 100%;
+  height: 14rem;
   width: 100%;
   background-color: #252A3F;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
+  align-items: center;
+  border-radius: 10rem 0rem 10rem 0rem;
 }
 
 .mission-detail h1 {
@@ -136,27 +189,25 @@ body {
   color: #FEF2F2;
   font-size: medium;
   padding-top: 1rem;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-inline: 4rem;
 }
 
 /* Info */
 .info-container {
   display: flex;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 2rem;
+  padding-right: 4rem;
   padding-bottom: 5rem;
   gap: 100px;
 }
 
 .info-detail {
-  font-weight: 500;
   display: inline-block;
 }
 
 .info-detail h1 {
   border-bottom: 4px solid #FF3131;
+  font-weight: 500;
+  font-size: x-large;
 }
 
 .info-detail h1 span {
@@ -166,6 +217,7 @@ body {
 .info-detail p {
   padding-top: 1rem;
   color: #667B99;
+  max-width: 35rem;
 }
 
 .info-container img {
@@ -174,6 +226,35 @@ body {
   background-color: #252A3F;
 }
 
+
+/* Our Team */
+.team-container {
+  padding-right: 4rem;
+  padding-bottom: 5rem;
+}
+
+.team-header {
+  border-bottom: 4px solid #FF3131;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.team-header span {
+  color: #FF3131;
+}
+
+.team-img{
+  padding-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.team-img .team-one{
+  height: 20rem;
+  width: 8rem;
+  border-radius: 15rem;
+  background-color: #252A3F;
+}
 
 
 /* Newsletter */

@@ -54,16 +54,20 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-content">
+    <div class="main-left">
         <div class="hero-left">
           <h1 class="hero-title">Delivering Across Nepal</h1>
-          <p class="hero-subtitle">Fast, Reliable, Transparent</p>
+          <h1 class="hero-subtitle">Tech Enabled Logistics Business</h1>
+          <h1 class="hero-slogan">#MoveTheNation</h1>
         </div>
+      </div>
+      <div class="container">
+      
+      <div class="hero-content">
         <div class="hero-right">
           <div class="shipping-form">
             <div class="tabs">
-              <button class="tab-btn active" onclick="switchTab('ship')">Ship Order</button>
+              <button class="tab-btn active" onclick="switchTab('ship')">Book Order</button>
               <button class="tab-btn" onclick="switchTab('track')">Track Order</button>
             </div>
 
@@ -73,7 +77,7 @@
               <div class="form-group">
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" placeholder="Enter pickup address" class="form-input">
+                  <input type="text" id="locationList" placeholder="Enter pickup address" class="form-input">
                 </div>
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>

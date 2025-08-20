@@ -22,7 +22,7 @@ body {
 
 /* Colors */
 :root {
-  --red-primary: #DC2626;
+  --red-primary: #F04A23;
   --orange-accent: #F97316;
   --navy-dark: #1E3A8A;
   --gray-light: #F9FAFB;
@@ -125,13 +125,34 @@ body {
   margin: 2rem;
   border-radius: 2rem;
   position: relative;
+  min-height: 600px; 
+}
+
+.hero .container{
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 0;
+  position: relative;
+}
+
+
+.hero-left{
+  background: linear-gradient(to right, var(--red-primary), rgba(0, 0, 255, 0));
+  padding: 2rem;
+  max-height: 15rem;
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 0.6fr;
+  display: flex;
   gap: 3rem;
   align-items: center;
+  padding-right: 6rem;
+
 }
 
 .hero-title {
@@ -145,12 +166,16 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   opacity: 0.95;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
+.hero-slogan{
+  font-weight:700;
+}
 
 .shipping-form {
   background: white;
+  width: 30rem;
   color: #333;
   border-radius: 1rem;
   padding: 2rem;
@@ -161,7 +186,7 @@ body {
   display: flex;
   margin-bottom: 1.5rem;
   border-radius: 2rem;
-  border: 1px solid black;
+  border: 1px solid rgb(183, 183, 183);
   background: #F3F4F6;
 }
 
@@ -170,10 +195,18 @@ body {
   padding: 0.75rem;
   background: none;
   border: none;
-  border-radius: 2rem 0rem 0rem 2rem;
+  border-radius: none;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s;
+}
+
+.tab-btn:first-child {
+  border-radius: 2rem 0 0 2rem;
+}
+
+.tab-btn:last-child {
+  border-radius: 0 2rem 2rem 0;
 }
 
 .tab-btn.active {

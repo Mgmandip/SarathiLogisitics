@@ -99,13 +99,12 @@ body {
 
 
 .hero-left{
-  background: linear-gradient(to right, var(--red-primary), rgba(0, 0, 255, 0));
-  padding: 2rem;
-  max-height: 15rem;
+  background: linear-gradient(to right, var(--blue-dark), rgba(0, 0, 255, 0));
+  padding: 3rem;
+  padding-inline: 4rem;
   position: absolute;
   bottom: 0rem;
   left: 0rem;
-  
 }
 
 .hero-content {
@@ -128,6 +127,13 @@ body {
   font-weight: 600;
   opacity: 0.95;
   margin-bottom: 1rem;
+}
+
+.hero-detail{
+  font-size: large;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  max-width: 45rem;
 }
 
 .hero-slogan{

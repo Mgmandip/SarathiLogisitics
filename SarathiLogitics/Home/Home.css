@@ -64,9 +64,33 @@ body {
   transition: color 0.3s;
 }
 
+.nav-link a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+
 .nav-link:hover {
   color: var(--red-primary);
 }
+
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;  
+}
+
+.no-link-style:visited {
+  color: inherit;       
+}
+
+.no-link-style:hover {
+  color: inherit; 
+}
+
+
 
 .ship-btn {
   background-color: #ff5a3c;
@@ -288,6 +312,10 @@ body {
 
 .link:hover {
   text-decoration: underline;
+}
+
+#nav-default{
+  color: var(--red-primary);
 }
 
 /* Info */

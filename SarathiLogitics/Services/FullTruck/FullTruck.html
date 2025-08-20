@@ -15,14 +15,14 @@
     <div class="container">
       <div class="nav">
         <div class="logo">
-          <img src="../Assets/Logosarathi.png" alt="Sarathi Logistics" class="logo">
+          <img src="../../Assets/Logosarathi.png" alt="Sarathi Logistics" class="logo">
         </div>
         <nav class="nav-menu">
-          <a href="../Home/Home.html" class="nav-link">Home</a>
-          <a href="../ExpressParcel/ExpressParcel.html" class="nav-link">Services</a>
-          <a href="../AboutUs/AboutUs.html" class="nav-link">About us</a>
-          <a href="../ContactUs/ContactUs.html" class="nav-link">Contact</a>
-          <a href="../Registration/Registration.html" class="nav-link">Register</a>
+          <a href="../../Home/Home.html" class="nav-link">Home</a>
+          <a href="../../ExpressParcel/ExpressParcel.html" class="nav-link" id="nav-default">Services</a>
+          <a href="../../AboutUs/AboutUs.html" class="nav-link">About us</a>
+          <a href="../../ContactUs/ContactUs.html" class="nav-link">Contact</a>
+          <a href="../../Registration/Registration.html" class="nav-link">Register</a>
           <button class="ship-btn">Book Now</button>
         </nav>
 
@@ -32,39 +32,33 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-content">
+    <div class="main-left">
         <div class="hero-left">
-          <div class="container">
-            <div class="container-detail">
-              <h1 class="heading">Full Truckload (FTL)</h1>
-              <h1 class="sub-heading">Cost-Effective Freight for Medium-Sized Loads</h1>
-              <p>
-                When you need an entire truck, our FTL service ensures your large shipments move fast and without disruption. With a nationwide fleet and experienced drivers, Sarathi Logistics offers dependable bulk transportation from border towns to city centers.
-              </p>
-              <div class="points">
-                <li>Direct delivery with no transfers</li>
-                <li>Route optimization</li>
-                <li>Track Order</li>
-              </div>
-            </div>
-          </div>
+          <h1 class="hero-title">Delivering Across Nepal</h1>
+          <h1 class="hero-subtitle">Tech Enabled Logistics Business</h1>
+          <h1 class="hero-slogan">#MoveTheNation</h1>
         </div>
-
+      </div>
+      <div class="container">
+      
+      <div class="hero-content">
         <div class="hero-right">
           <div class="shipping-form">
             <div class="tabs">
-              <button class="tab-btn active" onclick="switchTab('ship')">Ship Order</button>
+              <button class="tab-btn active" onclick="switchTab('ship')">Book Order</button>
               <button class="tab-btn" onclick="switchTab('track')">Track Order</button>
             </div>
 
+            <!-- Ship Order Tab -->
             <div id="ship-tab" class="tab-content active">
               <h3>Ship your order through</h3>
               <div class="form-group">
                 <div class="input-wrapper">
-                  <input type="text" placeholder="Enter pickup address" class="form-input">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <input type="text" id="locationList" placeholder="Enter pickup address" class="form-input">
                 </div>
                 <div class="input-wrapper">
+                  <i class="fa-solid fa-location-dot"></i>
                   <input type="text" placeholder="Enter delivery address" class="form-input">
                 </div>
               </div>
@@ -74,7 +68,19 @@
               </p>
             </div>
 
+            <!-- Track Order Tab -->
+            <div id="track-tab" class="tab-content">
+              <h3>Track your order through</h3>
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-hashtag"></i>
+                  <input type="text" placeholder="Enter CN number" class="form-input">
+                </div>
+              </div>
+              <button class="btn-primary">Track Order</button>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -91,7 +97,7 @@
         We offer a modern, GPS-enabled fleet and nationwide coverage across Nepal from city centers to border towns ensuring your goods arrive on time, in full, and in perfect condition.
       </p>
     </div>
-    <img src="../Assets/FullSecImg.png" alt="">
+    <img src="../../Assets/FullSecImg.png" alt="">
   </div>
 
   <!-- How It Works -->
@@ -100,18 +106,18 @@
       <h2 class="section-title">How it <span class="text-red">works?</span></h2>
       <div class="steps">
         <div class="step">
-          <img src="../Assets/Step1.png" class="step-img" alt="Schedule pickup">
+          <img src="../../Assets/Step1.png" class="step-img" alt="Schedule pickup">
           <h3 class="step-title"><span>Schedule</span> a free pickup</h3>
           <p class="step-desc">Get packages pickup for free from your location. Book courier for yourself or your loved
             ones online from our website or app.</p>
         </div>
         <div class="step">
-          <img src="../Assets/Step2.png" class="step-img" alt="Doorstep service">
+          <img src="../../Assets/Step2.png" class="step-img" alt="Doorstep service">
           <h3 class="step-title">We arrive at your <span>doorstep</span></h3>
           <p class="step-desc">Our partners reach your location within 24 hours of placing the order.</p>
         </div>
         <div class="step">
-          <img src="../Assets/Step3.png" class="step-img" alt="Delivery tracking">
+          <img src="../../Assets/Step3.png" class="step-img" alt="Delivery tracking">
           <h3 class="step-title">Sit back and <span>relax</span></h3>
           <p class="step-desc">Your order will be delivered to the chosen destination. Track them on our website or app.
           </p>
@@ -159,7 +165,7 @@
     </div>
 
     <!-- Box image -->
-    <img src="../Assets/Box.png" class="box-img" alt="Box">
+    <img src="../../Assets/Box.png" class="box-img" alt="Box">
   </div>
 
 
@@ -173,7 +179,7 @@
 
   <div class="service-wrapper">
     <div class="back-temple">
-      <img src="../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
+      <img src="../../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
     </div>
     <div class="service-div">
 
@@ -300,7 +306,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-logo">
-        <img src="../Assets/Logosarathi.png" alt="Sarathi Logo" />
+        <img src="../../Assets/Logosarathi.png" alt="Sarathi Logo" />
         <p class="about-sarathi">Nepal's premier logistics company connecting every corner of the nation with
           reliable,
           fast, and transparent delivery services since 2010.</p>

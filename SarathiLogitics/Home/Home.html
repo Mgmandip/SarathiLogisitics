@@ -18,27 +18,39 @@
           <img src="../Assets/Logosarathi.png" alt="Sarathi Logistics" class="logo">
         </div>
         <nav class="nav-menu">
-          <a href="../Home/Home.html" class="nav-link">Home</a>
+          <a href="../Home/Home.html" class="nav-link" id="nav-default">Home</a>
           <div class="services-wrapper">
-            <a href="../ExpressParcel/ExpressParcel.html" class="nav-link">Services</a>
+            <a class="nav-link">Services</a>
             <div class="services-list">
               <ul>
                 <li class="list">
-                  <i class="fa-solid fa-box"></i> Express Parcel
+                  <a href="../../SarathiLogitics/Services/ExpressParcel/ExpressParcel.html" class="no-link-style">
+                    <i class="fa-solid fa-box"></i> Express Parcel
+                  </a>
                 </li>
                 <li class="list">
-                  <i class="fa-solid fa-warehouse"></i> Warehousing
+                  <a href="../../SarathiLogitics/Services/Warehousing/Warehousing.html" class="no-link-style">
+                    <i class="fa-solid fa-warehouse"></i> Warehousing
+                  </a>
                 </li>
                 <li class="list">
-                  <i class="fa-solid fa-truck"></i> Part Truckload
+                  <a href="../../SarathiLogitics/Services/PartTruck/PartTruck.html" class="no-link-style">
+                    <i class="fa-solid fa-truck"></i> Part Truckload
+                  </a>
                 </li>
                 <li class="list">
-                  <i class="fas fa-truck-moving"></i> Full Truckload
+                  <a href="../../SarathiLogitics/Services/FullTruck/FullTruck.html" class="no-link-style">
+                    <i class="fas fa-truck-moving"></i> Full Truckload
+                  </a>
                 </li>
                 <li class="list">
-                  <i class="fa-solid fa-ship"></i> Cross Border
+                  <a href="../../SarathiLogitics/Services/CrossBorder/CrossBorder.html" class="no-link-style">
+                    <i class="fa-solid fa-ship"></i> Cross Border
+                  </a>
                 </li>
               </ul>
+
+
             </div>
           </div>
 
@@ -55,14 +67,14 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="main-left">
-        <div class="hero-left">
-          <h1 class="hero-title">Delivering Across Nepal</h1>
-          <h1 class="hero-subtitle">Tech Enabled Logistics Business</h1>
-          <h1 class="hero-slogan">#MoveTheNation</h1>
-        </div>
+      <div class="hero-left">
+        <h1 class="hero-title">Delivering Across Nepal</h1>
+        <h1 class="hero-subtitle">Tech Enabled Logistics Business</h1>
+        <h1 class="hero-slogan">#MoveTheNation</h1>
       </div>
-      <div class="container">
-      
+    </div>
+    <div class="container">
+
       <div class="hero-content">
         <div class="hero-right">
           <div class="shipping-form">
@@ -231,7 +243,8 @@
               <li>Secure handling</li>
             </ul>
             <div class="button">
-              <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
+              <button class="learnMoreBtn" data-target="../Services/FullTruck/FullTruck.html">Learn More<i
+                  class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
@@ -251,7 +264,8 @@
               <li>Secure handling</li>
             </ul>
             <div class="button">
-              <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
+              <button class="learnMoreBtn" data-target="../Services/PartTruck/PartTruck.html">Learn More<i
+                  class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
@@ -271,7 +285,8 @@
               <li>Secure handling</li>
             </ul>
             <div class="button">
-              <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
+              <button class="learnMoreBtn" data-target="../Services/Warehousing/Warehousing.html">Learn More<i
+                  class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
@@ -290,7 +305,8 @@
               <li>Secure handling</li>
             </ul>
             <div class="button">
-              <button id="learnMoreBtn">Learn More<i class="fa-solid fa-arrow-right"></i></button>
+              <button class="learnMoreBtn" data-target="../Services/PartTruck/PartTruck.html">Learn More<i
+                  class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
         </div>

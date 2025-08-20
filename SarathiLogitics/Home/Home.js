@@ -8,3 +8,10 @@ function switchTab(tab) {
   document.getElementById(tab + '-tab').classList.add('active');
   document.querySelector(`.tab-btn[onclick="switchTab('${tab}')"]`).classList.add('active');
 }
+
+
+ const learnMoreBtn = document.getElementById('learnMoreBtn');
+
+    learnMoreBtn.addEventListener('click', function() {
+        window.location.href = '../S';
+    });

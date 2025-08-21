@@ -436,7 +436,6 @@ window.SarathiLogistics = {
     // Track form interactions
     trackFormInteraction: function(action, data) {
         console.log('Form Interaction:', action, data);
-        // In a real application, you would send this to analytics
     },
     
     // Format phone number

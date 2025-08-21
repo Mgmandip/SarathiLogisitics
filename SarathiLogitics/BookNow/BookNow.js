@@ -19,7 +19,3 @@ learnMoreButtons.forEach((btn) => {
     window.location.href = targetPage;
   });
 });
-
-function booknow() {
-  window.location.href = "../BookNow/BookNow.html"; 
-}

@@ -18,14 +18,45 @@
           <img src="../Assets/Logosarathi.png" alt="Sarathi Logistics" class="logo">
         </div>
         <nav class="nav-menu">
-          <a href="../Home/Home.html" class="nav-link">Home</a>
-          <a href="#" class="nav-link">Services</a>
-          <a href="../AboutUs/AboutUs.html" class="nav-link" id="nav-default">About us</a>
+          <a href="../Home/Home.html" class="nav-link" id="nav-default">Home</a>
+          <div class="services-wrapper">
+            <a class="nav-link">Services</a>
+            <div class="services-list">
+              <ul>
+                <li class="list">
+                  <a href="../../SarathiLogitics/Services/ExpressParcel/ExpressParcel.html" class="no-link-style">
+                    <i class="fa-solid fa-box"></i> Express Parcel
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../SarathiLogitics/Services/Warehousing/Warehousing.html" class="no-link-style">
+                    <i class="fa-solid fa-warehouse"></i> Warehousing
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../SarathiLogitics/Services/PartTruck/PartTruck.html" class="no-link-style">
+                    <i class="fa-solid fa-truck"></i> Part Truckload
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../SarathiLogitics/Services/FullTruck/FullTruck.html" class="no-link-style">
+                    <i class="fas fa-truck-moving"></i> Full Truckload
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../SarathiLogitics/Services/CrossBorder/CrossBorder.html" class="no-link-style">
+                    <i class="fa-solid fa-ship"></i> Cross Border
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#" class="nav-link">About us</a>
           <a href="../ContactUs/ContactUs.html" class="nav-link">Contact</a>
           <a href="../Authentication/Registration/Registration.html" class="nav-link">Register</a>
-          <button class="ship-btn">Book Now</button>
+          <button onclick="booknow()" class="ship-btn">Book Now</button>
         </nav>
-
       </div>
     </div>
   </header>

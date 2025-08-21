@@ -18,17 +18,18 @@ body {
 
 /* Colors */
 :root {
-  --red-primary: #DC2626;
-  --orange-accent: #F97316;
+  --red-primary: #F04A23;
   --blue-dark: #0B243F;
   --gray-light: #F9FAFB;
   --gray-medium: #6B7280;
   --white: #FFFFFF;
+  --grey-color: #d1d5db;
+  --background-color: #FEF2F2;
 }
 
 /* Header */
 .header {
-  background-color: #FEF2F2;
+  background-color: var(--background-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -42,14 +43,14 @@ body {
   padding: 1rem 0;
 }
 
-.logo {
-  height: 35px;
-}
-
 .nav-menu {
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+.logo{
+  height: 2rem;
 }
 
 .nav-link {
@@ -59,22 +60,87 @@ body {
   transition: color 0.3s;
 }
 
+.nav-link a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+
 .nav-link:hover {
   color: var(--red-primary);
 }
 
-#nav-default{
-  color: var(--red-primary);
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;  
 }
 
+.no-link-style:visited {
+  color: inherit;       
+}
+
+.no-link-style:hover {
+  color: inherit; 
+}
+
+
 .ship-btn {
-  background-color: #ff5a3c;
-  color: #fff;
-  border: none;
+  color: var(--red-primary);
+  background-color: var(--background-color);
+  border: 1px solid  var(--red-primary);
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  font-weight:bold;
   align-items: center;
+}
+
+.ship-btn:hover{
+  color: var(--red-primary);
+  background-color: #ffd8ce;
+  border: 1px solid  var(--red-primary);
+  transition: 0.4s;
+}
+
+.services-wrapper {
+  position: relative;
+}
+
+.services-list {
+  list-style: none;
+  background-color: var(--background-color);
+  padding: 0.5rem 1.5rem;
+  display: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  z-index: 1000;
+}
+
+.services-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+.services-list .list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 5px;white-space: nowrap;
+}
+
+.services-list .list:hover {
+  color: #F04A23;
+  cursor: pointer;
+}
+
+.services-wrapper:hover .services-list {
+  display: block;
 }
 
 /* Hero Section */

@@ -17,47 +17,54 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showNotification(message, type = "success") {
-    const existingNotification = document.querySelector(".notification");
+    const container = document.querySelector(".shipping-form");
+    if (!container) return;
+
+    const existingNotification = container.querySelector(".notification");
     if (existingNotification) existingNotification.remove();
 
     const notification = document.createElement("div");
     notification.className = `notification ${type}`;
     notification.innerHTML = `
-            <div class="notification-content">
-                <span>${message}</span>
-                <button class="notification-close">&times;</button>
-            </div>
-        `;
+        <div class="notification-content">
+            <span>${message}</span>
+            <button class="notification-close">&times;</button>
+        </div>
+    `;
 
     notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${type === "success" ? "#10b981" : "#ef4444"};
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            max-width: 400px;
-            animation: slideIn 0.3s ease-out;
-        `;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: ${type === "success" ? "#10b981" : "#ef4444"};
+        color: white;
+        padding: 12px 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 100;
+        max-width: 300px;
+        animation: slideIn 0.3s ease-out;
+    `;
 
+    // Add keyframes only once
     if (!document.querySelector("#notification-styles")) {
       const style = document.createElement("style");
       style.id = "notification-styles";
       style.textContent = `
-                @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-                @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
-                .notification-content { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-                .notification-close { background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
-                .notification-close:hover { background: rgba(255,255,255,0.2); border-radius: 50%; }
-            `;
+          @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+          @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+          .notification-content { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+          .notification-close { background: none; border: none; color: white; font-size: 18px; cursor: pointer; }
+          .notification-close:hover { opacity: 0.7; }
+      `;
       document.head.appendChild(style);
     }
 
-    document.body.appendChild(notification);
+    // Inserts into shipping form
+    container.style.position = "relative";
+    container.appendChild(notification);
 
+    // Close button
     notification
       .querySelector(".notification-close")
       .addEventListener("click", () => {
@@ -65,8 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => notification.remove(), 300);
       });
 
+    // Auto remove
     setTimeout(() => {
-      if (document.body.contains(notification)) {
+      if (container.contains(notification)) {
         notification.style.animation = "slideOut 0.3s ease-in";
         setTimeout(() => notification.remove(), 300);
       }
@@ -165,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showNotification("Logged in successfully");
 
         setTimeout(() => {
-          window.location.href = "../Home/Home.html";
+          window.location.href = "../../Home/Home.html";
         }, 2000);
       }, 100);
     });

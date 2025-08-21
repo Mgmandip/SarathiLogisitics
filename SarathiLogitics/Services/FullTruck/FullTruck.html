@@ -19,10 +19,10 @@
         </div>
         <nav class="nav-menu">
           <a href="../../Home/Home.html" class="nav-link">Home</a>
-          <a href="../../ExpressParcel/ExpressParcel.html" class="nav-link" id="nav-default">Services</a>
+          <a href="#" class="nav-link" id="nav-default">Services</a>
           <a href="../../AboutUs/AboutUs.html" class="nav-link">About us</a>
           <a href="../../ContactUs/ContactUs.html" class="nav-link">Contact</a>
-          <a href="../../Registration/Registration.html" class="nav-link">Register</a>
+          <a href="../../Authentication/Registration/Registration.html" class="nav-link">Register</a>
           <button class="ship-btn">Book Now</button>
         </nav>
 
@@ -37,7 +37,9 @@
         <h1 class="hero-title">Full Truckload (FTL)</h1>
         <h1 class="hero-subtitle">Cost-Effective Freight for Medium-Sized Loads</h1>
         <h1 class="hero-detail">
-          When you need an entire truck, our FTL service ensures your large shipments move fast and without disruption. With a nationwide fleet and experienced drivers, Sarathi Logistics offers dependable bulk transportation from border towns to city centers.
+          When you need an entire truck, our FTL service ensures your large shipments move fast and without disruption.
+          With a nationwide fleet and experienced drivers, Sarathi Logistics offers dependable bulk transportation from
+          border towns to city centers.
         </h1>
         <h1 class="hero-slogan">#MoveTheNation</h1>
       </div>
@@ -47,41 +49,39 @@
       <div class="hero-content">
         <div class="hero-right">
           <div class="shipping-form">
-            <div class="tabs">
-              <button class="tab-btn active" onclick="switchTab('ship')">Book Order</button>
-              <button class="tab-btn" onclick="switchTab('track')">Track Order</button>
-            </div>
-
-            <!-- Ship Order Tab -->
-            <div id="ship-tab" class="tab-content active">
-              <h3>Ship your order through</h3>
+            <!-- Contact Us Form -->
+            <div id="ship-tab" class="tab-content">
+              <h1>Contact Us</h1>
+              <h2>We’ll get in touch with you</h2>
               <div class="form-group">
                 <div class="input-wrapper">
-                  <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" id="locationList" placeholder="Enter pickup address" class="form-input">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" id="locationList" placeholder="Name" class="form-input">
+                </div>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-building"></i>
+                  <input type="text" placeholder="Company Name" class="form-input">
+                </div>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" placeholder="Email" class="form-input">
+                </div>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-phone"></i>
+                  <input type="number" placeholder="Phone Number" class="form-input">
                 </div>
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" placeholder="Enter delivery address" class="form-input">
+                  <input type="text" placeholder="Address" class="form-input">
                 </div>
+
               </div>
-              <button class="btn-primary">Book Order</button>
+              <button class="btn-primary">Submit</button>
               <p class="form-footer">
                 <a href="#" class="link">Create an account</a> to get your delivery
               </p>
             </div>
 
-            <!-- Track Order Tab -->
-            <div id="track-tab" class="tab-content">
-              <h3>Track your order through</h3>
-              <div class="form-group">
-                <div class="input-wrapper">
-                  <i class="fa-solid fa-hashtag"></i>
-                  <input type="text" placeholder="Enter CN number" class="form-input">
-                </div>
-              </div>
-              <button class="btn-primary">Track Order</button>
-            </div>
           </div>
 
         </div>
@@ -177,7 +177,7 @@
   </div>
 
 
-    <!-- Our Services -->
+  <!-- Our Services -->
   <div class="services-header"></div>
   <h1 class="header-one">Our <span>Services</span> </h1>
   <h1 class="header-two">Comprehensive logistics solutions

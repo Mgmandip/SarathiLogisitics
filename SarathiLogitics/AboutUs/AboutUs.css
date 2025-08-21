@@ -20,7 +20,7 @@ body {
 :root {
   --red-primary: #DC2626;
   --orange-accent: #F97316;
-  --navy-dark: #1E3A8A;
+  --blue-dark: #0B243F;
   --gray-light: #F9FAFB;
   --gray-medium: #6B7280;
   --white: #FFFFFF;
@@ -63,6 +63,10 @@ body {
   color: var(--red-primary);
 }
 
+#nav-default{
+  color: var(--red-primary);
+}
+
 .ship-btn {
   background-color: #ff5a3c;
   color: #fff;
@@ -75,7 +79,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--red-primary), #B91C1C);
+  background: linear-gradient(135deg, var(--blue-dark), #0d3764);
   color: white;
   padding: 2rem 0;
   overflow: hidden;
@@ -172,7 +176,7 @@ body {
 .mission-detail {
   height: 14rem;
   width: 100%;
-  background-color: #252A3F;
+  background: linear-gradient(135deg, var(--blue-dark), #0d3764);
   text-align: center;
   padding: 1rem;
   align-items: center;
@@ -208,6 +212,7 @@ body {
   border-bottom: 4px solid #FF3131;
   font-weight: 500;
   font-size: x-large;
+  display: inline-block;
 }
 
 .info-detail h1 span {
@@ -237,6 +242,7 @@ body {
   border-bottom: 4px solid #FF3131;
   font-weight: 500;
   font-size: x-large;
+  display: inline-block;
 }
 
 .team-header span {

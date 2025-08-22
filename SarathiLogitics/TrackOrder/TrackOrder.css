@@ -165,8 +165,9 @@ body {
 
 .form-header .main{
   display: flex;
+  font-weight: 500;
+  color: var(--blue-dark);
   justify-content: space-between; 
-  font-weight: 400;
   border-bottom: 3px solid #FF3131;
 }
 
@@ -214,6 +215,17 @@ body {
   color: #FF3131;
 }
 
+.order-header h1{
+  border-bottom: 3px solid var(--red-primary);
+  display: inline-block;
+  font-weight: 500;
+}
+
+.order-header span{
+  color: var(--red-primary);
+  font-weight: 500;
+}
+
 .order-container{
   display: flex;
   padding-top: 1rem;
@@ -246,11 +258,12 @@ body {
 .sender-information h1{
   color: #0B233F;
   font-size: 1rem; 
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .sender-information span{
   color: #666666;
+  font-weight: 400;
 }
 
 .receiver-header{
@@ -260,11 +273,12 @@ body {
 .receiver-information h1{
   color: #0B233F;
   font-size: 1rem; 
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .receiver-information span{
   color: #666666;
+  font-weight: 400;
 }
 
 .orderitem-header{
@@ -275,11 +289,12 @@ body {
 .orderitem-information h1{
   color: #0B233F;
   font-size: 1rem; 
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .orderitem-information span{
   color: #666666;
+  font-weight: 400;
 }
 
 .form-group {
@@ -316,6 +331,8 @@ body {
 .primary-btn {
   padding: 0.8rem 2rem;
   border-radius: 2rem;
+  font-size: medium;
+  font-weight: 500;
   background-color: #FF3131;
   color: white;
   border: none;
@@ -366,16 +383,26 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.orderplaced{
-  display: flex; 
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
-.orderplaced .outer-circle{
-  background-color: #FF3131;
+.progress-bar{
+  height: 50%;
+  width: 0.8rem;
+  background-color: var(--grey-color);
+  position: absolute;
+}
+
+.order-circle{
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  position: relative;
+}
+
+.order-circle .outer-circle{
+  background-color: var(--grey-color);
   height: 50px; 
   width: 50px; 
   border-radius: 100%; 
@@ -384,8 +411,8 @@ body {
   align-items: center;
 }
 
-.orderplaced .inner-circle{
-  background-color: #FF3131; 
+.order-circle .inner-circle{
+  background-color: var(--grey-color); 
   height: 35px; 
   width: 35px; 
   border: 3px solid white; border-radius: 100%; 
@@ -394,70 +421,7 @@ body {
   align-items: center;
 }
 
-.orderplaced .inner-circle i{
-  color: white; 
-  font-size: medium;
-}
-
-.intransit{
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-}
-
-.intransit .outer-intransit{
-  background-color: #FF3131; 
-  height: 50px; 
-  width: 50px; 
-  border-radius: 100%; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.intransit .inner-intransit{
-  background-color: #FF3131; 
-  height: 35px; 
-  width: 35px; 
-  border: 3px solid white; border-radius: 100%; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.intransit .inner-intransit i{
-  color: white; 
-  font-size: medium;
-}
-
-.delivered{
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.delivered .outer-delivered{
-  background-color: #FF3131; 
-  height: 50px; 
-  width: 50px; 
-  border-radius: 100%; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.delivered .inner-delivered{
-  background-color: #FF3131; 
-  height: 35px; 
-  width: 35px; 
-  border: 3px solid white; 
-  border-radius: 100%; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.delivered .inner-delivered i{
+.order-circle .inner-circle i{
   color: white; 
   font-size: medium;
 }

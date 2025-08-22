@@ -14,18 +14,50 @@
   <header class="header">
     <div class="container">
       <div class="nav">
-        <div>
+        <div class="logo">
           <img src="../../Assets/Logosarathi.png" alt="Sarathi Logistics" class="logo">
         </div>
         <nav class="nav-menu">
-          <a href="../Home/Home.html" class="nav-link">Home</a>
-          <a href="../ExpressParcel/ExpressParcel.html" class="nav-link">Services</a>
-          <a href="../AboutUs/AboutUs.html" class="nav-link">About us</a>
-          <a href="../ContactUs/ContactUs.html" class="nav-link">Contact</a>
-          <a href="../Registration/Registration.html" class="nav-link">Register</a>
-          <button class="ship-btn">Book Now</button>
-        </nav>
+          <a href="../../Home/Home.html" class="nav-link" id="nav-default">Home</a>
+          <div class="services-wrapper">
+            <a class="nav-link">Services</a>
+            <div class="services-list">
+              <ul>
+                <li class="list">
+                  <a href="../../../SarathiLogitics/Services/ExpressParcel/ExpressParcel.html" class="no-link-style">
+                    <i class="fa-solid fa-box"></i> Express Parcel
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../../SarathiLogitics/Services/Warehousing/Warehousing.html" class="no-link-style">
+                    <i class="fa-solid fa-warehouse"></i> Warehousing
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../../SarathiLogitics/Services/PartTruck/PartTruck.html" class="no-link-style">
+                    <i class="fa-solid fa-truck"></i> Part Truckload
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../../SarathiLogitics/Services/FullTruck/FullTruck.html" class="no-link-style">
+                    <i class="fas fa-truck-moving"></i> Full Truckload
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../../../SarathiLogitics/Services/CrossBorder/CrossBorder.html" class="no-link-style">
+                    <i class="fa-solid fa-ship"></i> Cross Border
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
 
+          <a href="../../Resource/News/News.html" class="nav-link">Resources</a>
+          <a href="../../AboutUs/AboutUs.html" class="nav-link">About us</a>
+          <a href="../../ContactUs/ContactUs.html" class="nav-link">Contact</a>
+          <a href="../../Authentication/Registration/Registration.html" class="nav-link">Register</a>
+          <button onclick="booknow()" class="ship-btn">Book Now</button>
+        </nav>
       </div>
     </div>
   </header>
@@ -38,7 +70,7 @@
       <div class="news-box">
         <img src="../../Assets/NewsImg.png" alt="">
         <div class="date">
-          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-solid fa-calendar-days"></i>
           <h1>24 July, 2025</h1>
         </div>
         <p class="news-header">
@@ -48,13 +80,13 @@
           प्रविधिमैत्री लजिस्टिक्स कम्पनी सारथी लजिस्टिक्स प्रा.लि.ले आज (साउन १ गत)
         </p>
         <hr>
-        <button>Read More <i class="fa-solid fa-briefcase"></i></button>
+        <button class="readmorebtn" data-id="1">Read More <i class="fa-solid fa-arrow-right"></i></button>
       </div>
 
       <div class="news-box">
         <img src="../../Assets/NewsImg.png" alt="">
         <div class="date">
-          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-solid fa-calendar-days"></i>
           <h1>24 July, 2025</h1>
         </div>
         <p class="news-header">
@@ -64,13 +96,13 @@
           प्रविधिमैत्री लजिस्टिक्स कम्पनी सारथी लजिस्टिक्स प्रा.लि.ले आज (साउन १ गत)
         </p>
         <hr>
-        <button>Read More <i class="fa-solid fa-briefcase"></i></button>
+        <button class="readmorebtn" data-id="2">Read More <i class="fa-solid fa-arrow-right"></i></button>
       </div>
 
       <div class="news-box">
         <img src="../../Assets/NewsImg.png" alt="">
         <div class="date">
-          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-solid fa-calendar-days"></i>
           <h1>24 July, 2025</h1>
         </div>
         <p class="news-header">
@@ -80,7 +112,7 @@
           प्रविधिमैत्री लजिस्टिक्स कम्पनी सारथी लजिस्टिक्स प्रा.लि.ले आज (साउन १ गत)
         </p>
         <hr>
-        <button>Read More <i class="fa-solid fa-briefcase"></i></button>
+        <button class="readmorebtn" data-id="3">Read More <i class="fa-solid fa-arrow-right"></i></button>
       </div>
 
       <div class="pagination">
@@ -99,7 +131,7 @@
       <div class="news-box">
         <img src="../../Assets/NewsImg.png" alt="">
         <div class="date">
-          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-solid fa-calendar-days"></i>
           <h1>24 July, 2025</h1>
         </div>
         <p class="news-header">
@@ -109,13 +141,13 @@
           प्रविधिमैत्री लजिस्टिक्स कम्पनी सारथी लजिस्टिक्स प्रा.लि.ले आज (साउन १ गत)
         </p>
         <hr>
-        <button>Read More <i class="fa-solid fa-briefcase"></i></button>
+        <button>Read More <i class="fa-solid fa-arrow-right"></i></button>
       </div>
 
       <div class="news-box">
         <img src="../../Assets/NewsImg.png" alt="">
         <div class="date">
-          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-solid fa-calendar-days"></i>
           <h1>24 July, 2025</h1>
         </div>
         <p class="news-header">
@@ -125,13 +157,13 @@
           प्रविधिमैत्री लजिस्टिक्स कम्पनी सारथी लजिस्टिक्स प्रा.लि.ले आज (साउन १ गत)
         </p>
         <hr>
-        <button>Read More <i class="fa-solid fa-briefcase"></i></button>
+        <button>Read More <i class="fa-solid fa-arrow-right"></i></button>
       </div>
 
       <div class="news-box">
         <img src="../../Assets/NewsImg.png" alt="">
         <div class="date">
-          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-solid fa-calendar-days"></i>
           <h1>24 July, 2025</h1>
         </div>
         <p class="news-header">

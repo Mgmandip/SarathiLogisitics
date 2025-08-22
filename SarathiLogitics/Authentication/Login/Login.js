@@ -110,29 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add input validations
-  if (phoneInput) {
-    addInputValidation(
-      phoneInput,
-      validatePhone,
-      "Please enter a valid phone number"
-    );
-    phoneInput.addEventListener("input", function () {
-      let value = this.value.replace(/\D/g, "");
-      if (value.startsWith("977")) value = "+977 " + value.substring(3);
-      else if (value.length === 10 && value.startsWith("9"))
-        value = "+977 " + value;
-      this.value = value;
-    });
-  }
-
-  if (passwordInput)
-    addInputValidation(
-      passwordInput,
-      (v) => v.trim().length >= 2,
-      "Please enter your password"
-    );
-
   // Form Submit Handler
   if (submitBtn) {
     submitBtn.addEventListener("click", function (e) {

@@ -131,52 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add input validations
-  if (nameInput)
-    addInputValidation(
-      nameInput,
-      (v) => v.trim().length >= 2,
-      "Name must be at least 2 characters long"
-    );
-  if (emailInput)
-    addInputValidation(
-      emailInput,
-      validateEmail,
-      "Please enter a valid email address"
-    );
-  if (phoneInput) {
-    addInputValidation(
-      phoneInput,
-      validatePhone,
-      "Please enter a valid phone number"
-    );
-    phoneInput.addEventListener("input", function () {
-      let value = this.value.replace(/\D/g, "");
-      if (value.startsWith("977")) value = "+977 " + value.substring(3);
-      else if (value.length === 10 && value.startsWith("9"))
-        value = "+977 " + value;
-      this.value = value;
-    });
-  }
-  if (cityInput)
-    addInputValidation(
-      cityInput,
-      (v) => v.trim().length >= 2,
-      "Provide valid city"
-    );
-  if (provinceInput)
-    addInputValidation(
-      provinceInput,
-      (v) => v.trim().length >= 2,
-      "Provide valid province"
-    );
-  if (addressInput)
-    addInputValidation(
-      addressInput,
-      (v) => v.trim().length >= 2,
-      "Provide valid address"
-    );
-
   // Form Submit Handler
   if (submitBtn) {
     submitBtn.addEventListener("click", function (e) {

@@ -1,14 +1,3 @@
-const learnMoreButtons = document.querySelectorAll(".learnMoreBtn");
-
-learnMoreButtons.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const targetPage = this.dataset.target;
-    window.location.href = targetPage;
-  });
-});
-
-
-
 /* Tab Button */
 function switchTab(tab) {
   const tabs = document.querySelectorAll(".tab-content");
@@ -180,3 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Track Order JS Loaded");
 });
+
+
+const learnMoreButtons = document.querySelectorAll(".learnMoreBtn");
+
+learnMoreButtons.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const targetPage = this.dataset.target;
+    window.location.href = targetPage;
+  });
+});
+

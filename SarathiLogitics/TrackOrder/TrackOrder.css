@@ -336,6 +336,7 @@ body {
   background-color: #FF3131;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 .form-footer {

@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (existingError) existingError.remove();
     });
   }
+  
 
   // Form Submit Handler
   if (submitBtn) {

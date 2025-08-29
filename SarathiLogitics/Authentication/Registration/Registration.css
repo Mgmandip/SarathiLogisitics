@@ -71,11 +71,9 @@ body {
   transition: color 0.3s;
 }
 
-
 .nav-link:hover {
   color: var(--red-primary);
 }
-
 
 .no-link-style {
   text-decoration: none;
@@ -89,7 +87,6 @@ body {
 .no-link-style:hover {
   color: inherit; 
 }
-
 
 .ship-btn {
   color: var(--red-primary);
@@ -109,21 +106,42 @@ body {
   transition: 0.4s;
 }
 
+/* Services */
 .services-wrapper {
   position: relative;
 }
 
+.nav-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  color: var(--text-color, #222);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--red-primary);
+}
+
 .services-list {
   list-style: none;
-  background-color: var(--background-color);
-  padding: 0.5rem 1.5rem;
-  display: none;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  background-color: var(--background-color, #fff);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 1.7rem;
+  top: 2.2rem;
   left: 0;
   z-index: 1000;
+  min-width: 210px;
+
+  /* hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
 .services-list ul {
@@ -131,20 +149,39 @@ body {
   padding: 0;
 }
 
+.services-list li {
+  list-style: none;
+}
+
 .services-list .list {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.services-list .list a {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding-block: 5px;white-space: nowrap;
+  gap: 0.8rem;
+  color: var(--text-color, #333);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .services-list .list:hover {
-  color: #F04A23;
-  cursor: pointer;
+  background: rgba(240, 74, 35, 0.08);
 }
 
+.services-list .list:hover a {
+  color: var(--red-primary);
+}
+
+/* Show on hover */
 .services-wrapper:hover .services-list {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* Hero Section */
@@ -331,5 +368,27 @@ body {
   .footer-container {
     flex-direction: column;
     gap: 30px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hero {
+    background: none;
+    padding: 0rem;
+    margin-inline: 0rem;
+    margin-block: 1rem;
+  }
+
+  .hero-content{
+    padding: 0rem;
+  }
+
+  .shipping-form{
+    padding-inline: 2rem;
   }
 }

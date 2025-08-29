@@ -1,13 +1,8 @@
-const learnMoreButtons = document.querySelectorAll(".learnMoreBtn");
 
-learnMoreButtons.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const targetPage = this.dataset.target;
-    window.location.href = targetPage;
-  });
-});
-
-
+/* Navbar Button */
+function booknow() {
+  window.location.href = "../../BookNow/BookNow.html";
+}
 
 /* Tab Button */
 function switchTab(tab) {
@@ -26,18 +21,16 @@ function switchTab(tab) {
 
 /* Form Validation */
 document.addEventListener("DOMContentLoaded", function () {
-  // Form Elements
-  const submitBtn = document.querySelector(".btn-primary");
+  // Buttons
+  const bookBtn = document.querySelector("#ship-tab .btn-primary");
+  const trackBtn = document.querySelector("#track-tab .btn-primary");
 
-  // Input Elements
-  const pickupInput = document.querySelector(
-    'input[placeholder="Enter pickup address"]'
-  );
-  const deliveryInput = document.querySelector(
-    'input[placeholder="Enter delivery address"]'
-  );
+  // Inputs
+  const pickupInput = document.querySelector("#pickupAddress");
+  const deliveryInput = document.querySelector("#deliveryAddress");
+  const cnInput = document.querySelector('#track-tab input[type="text"]');
 
-
+  // Notification function (same as yours)
   function showNotification(message, type = "success") {
     const container = document.querySelector(".shipping-form");
     if (!container) return;
@@ -68,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         animation: slideIn 0.3s ease-out;
     `;
 
-    // Add keyframes only once
     if (!document.querySelector("#notification-styles")) {
       const style = document.createElement("style");
       style.id = "notification-styles";
@@ -82,11 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.head.appendChild(style);
     }
 
-    // Inserts into shipping form
     container.style.position = "relative";
     container.appendChild(notification);
 
-    // Close button
     notification
       .querySelector(".notification-close")
       .addEventListener("click", () => {
@@ -94,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => notification.remove(), 300);
       });
 
-    // Auto remove
     setTimeout(() => {
       if (container.contains(notification)) {
         notification.style.animation = "slideOut 0.3s ease-in";
@@ -103,78 +92,64 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
   }
 
-  function addInputValidation(input, validationFn, errorMessage) {
-    input.addEventListener("blur", function () {
-      if (this.value && !validationFn(this.value)) {
-        this.style.borderColor = "#ef4444";
-        this.style.background = "#fef2f2";
-        const existingError = this.parentNode.querySelector(".error-message");
-        if (existingError) existingError.remove();
-        const errorDiv = document.createElement("div");
-        errorDiv.className = "error-message";
-        errorDiv.style.cssText =
-          "color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;";
-        errorDiv.textContent = errorMessage;
-        this.parentNode.appendChild(errorDiv);
-      } else {
-        this.style.borderColor = "#10b981";
-        this.style.background = "#f0fdf4";
-        const existingError = this.parentNode.querySelector(".error-message");
-        if (existingError) existingError.remove();
-      }
-    });
-
-    input.addEventListener("focus", function () {
-      this.style.borderColor = "#dc2626";
-      this.style.background = "#ffffff";
-      const existingError = this.parentNode.querySelector(".error-message");
-      if (existingError) existingError.remove();
-    });
-  }
-
-  // Form Submit Handler
-  if (submitBtn) {
-    submitBtn.addEventListener("click", function (e) {
+  // Book Order Submit
+  if (bookBtn) {
+    bookBtn.addEventListener("click", function (e) {
       e.preventDefault();
 
-      const formData = {
-        pickup: pickupInput?.value.trim(),
-        delivery: deliveryInput?.value.trim(),
-      };
+      const pickup = pickupInput.value.trim();
+      const delivery = deliveryInput.value.trim();
 
-      let isValid = true;
-      let errors = [];
-
-      if (!formData.pickup || formData.pickup.length < 2) {
-        errors.push("Please enter pickup address");
-        isValid = false;
+      if (!pickup || pickup.length < 2) {
+        return showNotification("Please enter pickup address", "error");
+      }
+      if (!delivery || delivery.length < 2) {
+        return showNotification("Please enter delivery address", "error");
       }
 
-      if (!formData.delivery || formData.delivery.length < 2) {
-        errors.push("Please enter delivery address");
-        isValid = false;
-      }      
-
-      if (!isValid) {
-        showNotification(errors[0], "error");
-        return;
-      }
-
-      const originalText = this.textContent;
       this.textContent = "Booking Order...";
       this.disabled = true;
 
       setTimeout(() => {
-        console.log("Order Booked:", formData);
-        [pickupInput, deliveryInput].forEach((input) => (input.value = ""));
-        this.textContent = originalText;
+        console.log("Order Booked:", { pickup, delivery });
+        pickupInput.value = "";
+        deliveryInput.value = "";
+        this.textContent = "Book Order";
         this.disabled = false;
-        showNotification("Order Booked Sucessfully");
+        showNotification("Order Booked Successfully");
 
         setTimeout(() => {
-          window.location.href = "../TrackOrder/TrackOrder.html";
+          window.location.href = "../../Delivery/Delivery.html";
         }, 2000);
-      }, 100);
+      }, 800);
+    });
+  }
+
+  // Track Order Submit
+  if (trackBtn) {
+    trackBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const cnNumber = cnInput.value.trim();
+
+      if (!cnNumber || cnNumber.length < 5) {
+        return showNotification("Please enter a valid CN number", "error");
+      }
+
+      this.textContent = "Tracking...";
+      this.disabled = true;
+
+      setTimeout(() => {
+        console.log("Tracking CN:", cnNumber);
+        cnInput.value = "";
+        this.textContent = "Track Order";
+        this.disabled = false;
+        showNotification("Tracking started...");
+
+        setTimeout(() => {
+          window.location.href = "../../TrackOrder/TrackOrder.html";
+        }, 2000);
+      }, 800);
     });
   }
 

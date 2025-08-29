@@ -1,3 +1,8 @@
+/* Navbar Button */
+function booknow() {
+  window.location.href = "../BookNow/BookNow.html";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Form Elements
   const registrationForm = document.querySelector(".shipping-form");

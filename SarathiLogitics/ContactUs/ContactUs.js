@@ -1,3 +1,8 @@
+/* Navbar Button */
+function booknow() {
+  window.location.href = "../BookNow/BookNow.html";
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // Form Elements
@@ -288,21 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Book Now Button Handler
-    if (bookNowBtn) {
-        bookNowBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            showNotification('Redirecting to booking page...', 'info');
-            
-            // Simulate redirect
-            setTimeout(() => {
-                // In a real application, you would redirect to the booking page
-                console.log('Redirecting to booking page');
-                // window.location.href = '../Booking/Booking.html';
-            }, 1000);
-        });
-    }
-    
     // Smooth scroll for navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
@@ -459,3 +449,10 @@ window.SarathiLogistics = {
         };
     }
 };
+
+
+/* Navbar Button */
+function booknow() {
+  window.location.href = "../BookNow/BookNow.html"; 
+}
+

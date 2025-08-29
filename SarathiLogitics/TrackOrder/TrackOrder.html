@@ -21,7 +21,7 @@
         <nav class="nav-menu">
           <a href="../Home/Home.html" class="nav-link" id="nav-default">Home</a>
           <div class="services-wrapper">
-            <a class="nav-link">Services</a>
+            <a class="nav-link">Services <i class="fa-solid fa-angle-down"></i></a>
             <div class="services-list">
               <ul>
                 <li class="list">
@@ -44,11 +44,13 @@
                     <i class="fas fa-truck-moving"></i> Full Truckload
                   </a>
                 </li>
+                <!--
                 <li class="list">
                   <a href="../../SarathiLogitics/Services/CrossBorder/CrossBorder.html" class="no-link-style">
                     <i class="fa-solid fa-ship"></i> Cross Border
                   </a>
                 </li>
+              -->
               </ul>
             </div>
           </div>
@@ -81,7 +83,7 @@
 
                 <div class="input-wrapper">
                   <div>
-                    <input type="text"  id="trackingIdInput" placeholder="eg.643A039C5ADD493" class="form-input">
+                    <input type="text" id="trackingIdInput" placeholder="eg.643A039C5ADD" class="form-input">
                   </div>
 
                   <div>
@@ -90,7 +92,7 @@
 
                 </div>
 
-                <div class="order-container"  id="orderContainer">
+                <div class="order-container" id="orderContainer">
 
                   <div>
                     <div class="order-header">
@@ -101,28 +103,28 @@
                       <div class="sender">
                         <h1 class="sender-header">Sender</h1>
                         <div class="sender-information">
-                          <h1>Name: <span>Archie Rai</span></h1>
-                          <h1>Contact Number: <span>+1 123 456 789</span></h1>
-                          <h1>Email: <span>archierai@28@gmail.com</span></h1>
-                          <h1>Address: <span>Dholahiti, lalitpur</span></h1>
-                          <h1>City: <span>Lalitpur</span></h1>
+                          <h1>Name: <span>${name}</span></h1>
+                          <h1>Contact Number: <span>${Contactnumber}</span></h1>
+                          <h1>Email: <span>${email}</span></h1>
+                          <h1>Address: <span>${address}</span></h1>
+                          <h1>City: <span>${city}</span></h1>
                         </div>
                       </div>
                       <div class="receiver">
                         <h1 class="receiver-header">Reciver</h1>
                         <div class="receiver-information">
-                          <h1>Name: <span>Archie Rai</span></h1>
-                          <h1>Contact Number: <span>+1 123 456 789</span></h1>
-                          <h1>Email: <span>archierai@28@gmail.com</span></h1>
-                          <h1>Address: <span>Dholahiti, lalitpur</span></h1>
-                          <h1>City: <span>Lalitpur</span></h1>
+                          <h1>Name: <span>${name}</span></h1>
+                          <h1>Contact Number: <span>${contactnumber}</span></h1>
+                          <h1>Email: <span>{email}</span></h1>
+                          <h1>Address: <span>{address}</span></h1>
+                          <h1>City: <span>{city}</span></h1>
                         </div>
                       </div>
                       <div class="orderitem">
                         <h1 class="orderitem-header">Order</h1>
                         <div class="orderitem-information">
-                          <h1>Order Item: <span>Documents</span></h1>
-                          <h1>Weight/Quantity: <span>1</span></h1>
+                          <h1>Order Item: <span>{Documents}</span></h1>
+                          <h1>Weight/Quantity: <span>{1}</span></h1>
                         </div>
                       </div>
                     </div>
@@ -143,41 +145,39 @@
 
                   <div class="orderprogess">
                     <div class="progress-bar"></div>
-                    <div class="order-circle">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+
+                    <div class="order-circle active">
                       <div class="outer-circle">
-                        <div class="inner-circle"><i class="fas fa-box"></i>
-                        </div>
+                        <div class="inner-circle"><i class="fas fa-box"></i></div>
+                      </div>
+                    </div>
+
+                    <div class="order-circle active">
+                      <div class="outer-circle">
+                        <div class="inner-circle"><i class="fas fa-truck-fast"></i></div>
                       </div>
                     </div>
 
                     <div class="order-circle">
                       <div class="outer-circle">
-                        <div class="inner-circle"><i class="fas fa-truck-fast"></i>
-                        </div>
+                        <div class="inner-circle"><i class="fa-solid fa-warehouse"></i></div>
                       </div>
                     </div>
 
                     <div class="order-circle">
                       <div class="outer-circle">
-                        <div class="inner-circle"><i class="fa-solid fa-warehouse"></i>
-                        </div>
+                        <div class="inner-circle"><i class="fas fa-truck-fast"></i></div>
                       </div>
                     </div>
 
                     <div class="order-circle">
                       <div class="outer-circle">
-                        <div class="inner-circle"><i class="fas fa-truck-fast"></i>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="order-circle">
-                      <div class="outer-circle">
-                        <div class="inner-circle"><i class="fa-solid fa-circle-check"></i>
-                        </div>
+                        <div class="inner-circle"><i class="fa-solid fa-circle-check"></i></div>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -220,25 +220,38 @@
 
   <!-- Testimonials -->
   <section class="review-wrapper">
+    <!-- Background -->
     <img src="../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
-    <section class="review">
+
+    <div class="review">
       <div class="review-container">
+        <!-- Testimonial Image -->
         <img src="../Assets/TestimonialsImg.png" class="review-img" alt="Customer testimonial">
+
+        <!-- Testimonial Content -->
         <div class="review-content">
           <div class="review-header">
-            <h2 class="review-headertxt">What our <span>users say</span></h2>
+            <h2 class="review-headertxt">
+              What our <span>users say</span>
+            </h2>
           </div>
-          <i class="fa-solid fa-quote-left"></i>
-          <p>"My overall experience with Sarathi has been excellent. I had to send a package to my mother in Pokhara,
-            and the order was delivered within the allotted time. Particularly for long-distance and important packages,
-            I need not look further than Sarathi."</p>
+
+          <blockquote class="review-quote">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>
+              My overall experience with Sarathi has been excellent. I had to send a package to my mother in Pokhara,
+              and the order was delivered within the allotted time. Particularly for long-distance and important
+              packages, I need not look further than Sarathi.
+            </p>
+          </blockquote>
+
           <div class="review-name">
             <h3>Archie Rai</h3>
             <p>Lalitpur, Nepal</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </section>
 
   <!-- Newsletter -->

@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="ExpressParcel.css">
+  <link rel="stylesheet" href="ExpressParcel.css">  
+  <script src="Map.js"></script>
+  <script src="ExpressParcel.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNF_cV5pVBX9KvElwvTcboLUb1COJovZw&libraries=places">
+  </script>
   <title>Sarathi Logistics - Delivering Across Nepal</title>
 </head>
 
@@ -20,11 +25,11 @@
         <nav class="nav-menu">
           <a href="../../Home/Home.html" class="nav-link" id="nav-default">Home</a>
           <div class="services-wrapper">
-            <a class="nav-link">Services</a>
+            <a class="nav-link">Services <i class="fa-solid fa-angle-down"></i></a>
             <div class="services-list">
               <ul>
                 <li class="list">
-                  <a href="#" class="no-link-style">
+                  <a href="../ExpressParcel/ExpressParcel.html" class="no-link-style">
                     <i class="fa-solid fa-box"></i> Express Parcel
                   </a>
                 </li>
@@ -43,11 +48,13 @@
                     <i class="fas fa-truck-moving"></i> Full Truckload
                   </a>
                 </li>
+                <!--
                 <li class="list">
                   <a href="../CrossBorder/CrossBorder.html" class="no-link-style">
                     <i class="fa-solid fa-ship"></i> Cross Border
                   </a>
                 </li>
+              -->
               </ul>
             </div>
           </div>
@@ -66,12 +73,12 @@
     <div class="main-left">
       <div class="hero-left">
         <h1 class="hero-title">Express Parcel Delivery</h1>
-        <h1 class="hero-subtitle">Fast, Reliable, Nationwide</h1>
-        <p class="hero-detail">
+        <h1 class="hero-subtitle">Fast. Affordable. Nationwide.</h1>
+        <h1 class="hero-detail">
           At Express Parcel, our service ensures your packages reach any corner of Nepal quickly and safely. Whether
           you're sending online orders, legal documents, or personal items, we offer real-time tracking, doorstep
           pickup, and fast delivery across major cities and rural areas.
-        </p>
+        </h1>
         <h1 class="hero-slogan">#MoveTheNation</h1>
       </div>
     </div>
@@ -91,11 +98,11 @@
               <div class="form-group">
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" id="locationList" placeholder="Enter pickup address" class="form-input">
+                  <input type="text" id="pickupAddress" placeholder="Enter pickup address" class="form-input">
                 </div>
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" placeholder="Enter delivery address" class="form-input">
+                  <input type="text" id="deliveryAddress" placeholder="Enter delivery address" class="form-input">
                 </div>
               </div>
               <button class="btn-primary">Book Order</button>
@@ -117,89 +124,123 @@
             </div>
           </div>
 
+          <!-- Map Modal -->
+          <div id="mapModal" class="map-modal">
+            <div class="map-content">
+              <div class="header">
+                <h2>Select Location</h2>
+                <span id="closeMap" class="close-btn">&times;</span>
+              </div>
+              <div id="map"></div>
+              <div class="button">
+                <button id="confirmLocation" class="btn-primary">Confirm Location</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Express Parcel Delivery -->
-  <div class="express-parcel">
-    <div class="detail">
-      <h1>Express Parcel <span>Delivery</span></h1>
-      <p>
-        Express Parcel Delivery is a fast and reliable logistics service designed to transport small to medium-sized
-        packages across short and long distances quickly and efficiently.
-
-        At Sarathi Logistics, our Express Parcel service ensures time-sensitive shipments like online orders, business
-        documents, electronics, or personal parcels are picked up and delivered within 24 to 72 hours across Nepal.
-        Whether it's Kathmandu, Pokhara, Biratnagar, or remote districts, we offer door-to-door service with real-time
-        tracking. Our strong delivery network, GPS-enabled fleet, and customer-focused operations make us the ideal
-        partner for businesses and individuals looking for speed, reliability, and transparency in parcel shipping.
-      </p>
+  <!-- Full Truckload -->
+  <section class="express">
+    <div class="express-container">
+      <div class="express-detail">
+        <h2 class="express-title">Express Parcel</h2>
+        <h3>"Dedicated. Reliable. Nationwide for Businesses."</h3>
+        <p class="express-text">
+          At Sarathi Logistics, our Express Parcel service ensures time-sensitive shipments like online orders, business
+          documents, electronics, or personal parcels are picked up and delivered within 24 to 72 hours across Nepal.
+          Whether it's Kathmandu, Pokhara, Biratnagar, or remote districts, we offer door-to-door service with real-time
+          tracking. Our strong delivery network, GPS-enabled fleet, and customer-focused operations make us the ideal
+          partner for businesses and individuals looking for speed, reliability, and transparency in parcel shipping.
+        </p>
+      </div>
+      <div class="express-image">
+        <img src="../../Assets/ExpressSecImg.png" alt="Express Truck Services">
+      </div>
     </div>
-    <img src="../../Assets/ExpressSecImg.png" alt="">
-  </div>
+  </section>
+
 
   <!-- How It Works -->
   <section class="how-it-works">
     <div class="container">
-      <h2 class="section-title">How it <span class="text-red">works?</span></h2>
+      <h2 class="section-title">How It <span class="text-red">Works</span></h2>
+
+      <!-- First row -->
       <div class="steps">
         <div class="step">
-          <img src="../../Assets/Step1.png" class="step-img" alt="Schedule pickup">
-          <h3 class="step-title"><span>Schedule</span> a free pickup</h3>
-          <p class="step-desc">Get packages pickup for free from your location. Book courier for yourself or your loved
-            ones online from our website or app.</p>
+          <img src="../../Assets/Step1.png" class="step-img" alt="Book Storage">
+          <h3 class="step-title"><span>Business</span> Booking</h3>
+          <p class="step-desc">Place your Express Parcel order through our booking platform or with our Express Parcel logistics team.</p>
         </div>
+
         <div class="step">
-          <img src="../../Assets/Step2.png" class="step-img" alt="Doorstep service">
-          <h3 class="step-title">We arrive at your <span>doorstep</span></h3>
-          <p class="step-desc">Our partners reach your location within 24 hours of placing the order.</p>
+          <img src="../../Assets/Step2.png" class="step-img" alt="Store Securely">
+          <h3 class="step-title">Truck<span> Assignment</span> </h3>
+          <p class="step-desc">A dedicated vehicle is allocated based on cargo type, route, and urgency.</p>
         </div>
+
         <div class="step">
-          <img src="../../Assets/Step3.png" class="step-img" alt="Delivery tracking">
-          <h3 class="step-title">Sit back and <span>relax</span></h3>
-          <p class="step-desc">Your order will be delivered to the chosen destination. Track them on our website or app.
-          </p>
+          <img src="../../Assets/Step3.png" class="step-img" alt="Manage Inventory">
+          <h3 class="step-title"><span>Safe Loading</span> & Dispatch</h3>
+          <p class="step-desc">Cargo is secured and dispatched directly to your destination.</p>
         </div>
       </div>
+
+      <div class="steps second-steps">
+        <div class="step">
+          <img src="../../Assets/Step2.png" class="step-img" alt="Fulfillment">
+          <h3 class="step-title"><span>Nationwide</span> Transit</h3>
+          <p class="step-desc">Direct movement with minimized stops for faster delivery.</p>
+        </div>
+
+        <div class="step">
+          <img src="../../Assets/Step2.png" class="step-img" alt="Fulfillment">
+          <h3 class="step-title">Delivery<span> Confirmation</span></h3>
+          <p class="step-desc">Real-time tracking and proof of delivery upon arrival.</p>
+        </div>
+      </div>
+
+    </div>
     </div>
   </section>
 
+
   <!-- Info -->
   <div class="info-div">
+    <!-- Left Column -->
     <div class="info-container">
-      <h1 class="info-header">Why Choose Express Parcel?</h1>
+      <h1 class="info-header">Why Choose <span>Express Sarathi for Your Business?</span></h1>
 
       <div class="info-details">
-        <!-- Left Column -->
         <div class="left-column">
-          <h1 class="column-header">Ideal for:</h1>
-          <div class="list-detail">
-            <h1><i class="fa-solid fa-circle-check"></i>E-commerce Deliveries</h1>
-            <h1><i class="fa-solid fa-circle-check"></i>Urgent Business Shipments</h1>
-            <h1><i class="fa-solid fa-circle-check"></i>Personal Parcels</h1>
-          </div>
-        </div>
-
-        <div class="left-column">
-          <h1 class="column-header">Why Choose Us?</h1>
-          <div class="list-detail">
-            <h1><i class="fa-solid fa-check"></i>Reliable & Fast Delivery</h1>
-            <h1><i class="fa-solid fa-check"></i>Nationwide Coverage</h1>
-            <h1><i class="fa-solid fa-check"></i>Affordable Pricing</h1>
-          </div>
+          <h2 class="column-header">Ideal for:</h2>
+          <ul class="list-detail">
+            <li><i class="fa-solid fa-circle-check"></i> Bulk movement of raw materials or finished goods</li>
+            <li><i class="fa-solid fa-circle-check"></i> High-volume business shipments requiring dedicated space</li>
+            <li><i class="fa-solid fa-circle-check"></i> Time-sensitive or high-value cargo needing extra care</li>
+            <li><i class="fa-solid fa-circle-check"></i> Nationwide distribution for retail, manufacturing, and
+              wholesale industries</li>
+          </ul>
         </div>
       </div>
     </div>
 
     <!-- Right Column -->
     <div class="right-column">
-      <h1 class="heading">Send it today.</h1>
-      <h1 class="sub-heading">"From your door to theirs fast, safe, and always on time."</h1>
+      <h1 class="heading">Sarathi Express</h1>
+      <h2 class="heading-two">Empowering Businesses with Reliable Logistics</h2>
+      <p class="sub-heading">
+        From large consignments to time-critical deliveries, Sarathi Express ensures your business logistics are smooth,
+        transparent, and dependable.
+      </p>
+
       <div class="detailed-container">
         <div class="detailed-box">
-          <h1>"Nationwide express shipping that reaches both major cities and rural communities."</h1>
+          <p>"Nationwide express shipping that reaches both major cities and rural communities."</p>
         </div>
       </div>
     </div>
@@ -209,131 +250,156 @@
   </div>
 
 
+  <div class="why-us">
+    <h1 class="why-header">Why <span>Choose Us?</span></h1>
 
+    <div class="why-grid">
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Dedicated Fleet for Your Cargo</h2>
+        <p>A truck fully reserved for your shipment ensures maximum security, zero mix-ups, and peace of mind.</p>
+      </div>
 
-  <!-- Our Services -->
-  <div class="services-header"></div>
-  <h1 class="header-one">Our <span>Services</span> </h1>
-  <h1 class="header-two">Comprehensive logistics solutions
-    designed to meet every need across Nepal's diverse terrain and business requirements.</h1>
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Nationwide Delivery Network</h2>
+        <p>Strong coverage across major cities and towns in Nepal with growing branch and partner presence.</p>
+      </div>
 
-  <div class="service-wrapper">
-    <div class="back-temple">
-      <img src="../../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
-    </div>
-    <div class="service-div">
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> On-Time & Fast Transit</h2>
+        <p>Direct, point-to-point delivery without intermediate stops, ensuring timely arrival of shipments.</p>
+      </div>
 
-      <div class="service-container">
-        <div class="service-one" id="one">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Full Truckload</h1>
-            <P>
-              Secure storage solutions with inventory management and distribution services.
-            </P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button class="learnMoreBtn" data-target="../FullTruck/FullTruck.html">Learn More<i
-                  class="fa-solid fa-arrow-right"></i></button>
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Transparent Pricing</h2>
+        <p>Clear cost structures designed for businesses with no hidden charges—plan your logistics with confidence.</p>
+      </div>
 
-            </div>
-          </div>
-        </div>
-        <div class="service-one" id="two">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Part Truckload</h1>
-            <P>
-              Temperature-controlled logistics for pharmaceuticals, food, and sensitive items.
-            </P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button class="learnMoreBtn" data-target="../PartTruck/PartTruck.html">Learn More<i
-                  class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="service-one" id="three">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Warehousing</h1>
-            <P>
-              Cost-effective solutions for large shipments and business-to-business logistics.
-            </P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button class="learnMoreBtn" data-target="../Warehousing/Warehousing.html">Learn More<i
-                  class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="service-one" id="four">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Express Delivery</h1>
-            <P>Same-day and next-day delivery across major cities in Nepal with real-time
-              tracking.</P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button class="learnMoreBtn" data-target="../ExpressParcel/ExpressParcel.html">Coming Soon<i
-                  class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Customized Fulfillment Solutions</h2>
+        <p>Tailored options for industries like manufacturing, wholesale, retail, construction, FMCG, and more.</p>
+      </div>
 
-        <!-- Cross Border -->
-        <!--  
-          <div class="service-one">
-            <div class="service-detail">
-              <div class="service-icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <h1>Cross Border</h1>
-              <P>Same-day and next-day delivery across major cities in Nepal with real-time
-                tracking.</P>
-              <ul>
-                <li>Same-day delivery</li>
-                <li>GPS tracking</li>
-                <li>SMS notifications</li>
-                <li>Secure handling</li>
-              </ul>
-              <div class="button">
-                <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
-        -->
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Real-Time Tracking & Updates</h2>
+        <p>Technology-enabled monitoring keeps your supply chain visible and efficient.</p>
+      </div>
+
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Dedicated FTL Support</h2>
+        <p>FTL account managers and support staff ensure smooth coordination from booking to delivery.</p>
       </div>
     </div>
   </div>
+
+  <!-- Our Services -->
+  <section class="services-header">
+    <h1 class="header-one">Our <span>Services</span></h1>
+    <h2 class="header-two">
+      Comprehensive logistics solutions designed to meet every need across Nepal's diverse terrain and business
+      requirements.
+    </h2>
+  </section>
+
+  <section class="service-wrapper">
+    <!-- background image -->
+    <div class="back-temple">
+      <img src="../../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
+    </div>
+
+    <div class="service-div">
+      <div class="service-container">
+
+        <!-- Service Card 1 -->
+        <div class="service-one" id="one">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-truck"></i>
+            </div>
+            <h1>Full Truckload</h1>
+            <p>Secure storage solutions with inventory management and distribution services.</p>
+            <ul>
+              <li>Same-day delivery</li>
+              <li>GPS tracking</li>
+              <li>SMS notifications</li>
+              <li>Secure handling</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn" data-target="../FullTruck/FullTruck.html">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-one" id="two">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+            <h1>Part Truckload</h1>
+            <p>Temperature-controlled logistics for pharmaceuticals, food, and sensitive items.</p>
+            <ul>
+              <li>Same-day delivery</li>
+              <li>GPS tracking</li>
+              <li>SMS notifications</li>
+              <li>Secure handling</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn" data-target="../PartTruck/PartTruck.html">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-one" id="three">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <h1>Warehousing</h1>
+            <p>Cost-effective solutions for large shipments and business-to-business logistics.</p>
+            <ul>
+              <li>Same-day delivery</li>
+              <li>GPS tracking</li>
+              <li>SMS notifications</li>
+              <li>Secure handling</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn" data-target="../Warehousing/Warehousing.html">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-one" id="four">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h1>Express Delivery</h1>
+            <p>Same-day and next-day delivery across major cities in Nepal with real-time tracking.</p>
+            <ul>
+              <li>Same-day delivery</li>
+              <li>GPS tracking</li>
+              <li>SMS notifications</li>
+              <li>Secure handling</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn disabled" disabled data-target="../ExpressParcel/ExpressParcel.html">
+                Coming Soon <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
   <!-- Newsletter -->
@@ -391,6 +457,7 @@
   </footer>
 
 </body>
-<script src="ExpressParcel.js"></script>
+
+<script src="FullTruck.js"></script>
 
 </html>

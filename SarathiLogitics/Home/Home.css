@@ -957,6 +957,7 @@ footer {
     justify-content: center;
     margin: 1rem;
     padding: 1.5rem 0;
+    background-image: none;
   }
 
   .hero-left {
@@ -1026,7 +1027,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding-inline: 5rem;
+    padding-inline: 3rem;
 
   }
 

@@ -685,6 +685,7 @@ footer {
   .hero {
     padding: 1rem 0;
     margin-inline: 2rem;
+    background-image: none;
   }
 
   .hero-title {

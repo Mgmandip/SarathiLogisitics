@@ -706,11 +706,11 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
+  .nav-menu {
+    display: none;
   }
 
-  .nav-menu {
+  .main-left{
     display: none;
   }
 
@@ -740,11 +740,21 @@ footer {
 
   .steps {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
+  
 
   .review {
     flex-direction: column;
     text-align: center;
+  }
+
+  .bg-temple{
+    display: none;
+  }
+
+  .review-img{
+    display: none;
   }
 
   .newsletter-submit {
@@ -761,6 +771,29 @@ footer {
     flex-direction: column;
     gap: 30px;
   }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0px;
+  }
+
+  .hero{
+    background-image: none;
+    margin: 0rem;
+    margin-inline: 1rem;
+    padding: 4rem 0;    
+     min-height: 0px;
+  }
+
+  .hero-content{
+    padding-right: 0rem;
+  }
+
+  .shipping-form{
+    width: 24rem;
+  }
+  
 }
 
 html,

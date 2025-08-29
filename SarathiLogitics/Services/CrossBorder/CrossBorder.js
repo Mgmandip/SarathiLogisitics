@@ -17,7 +17,6 @@ function switchTab(tab) {
     .classList.add("active");
 }
 
-
 /* Form Validation */
 document.addEventListener("DOMContentLoaded", function () {
   // Buttons
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const deliveryInput = document.querySelector("#deliveryAddress");
   const cnInput = document.querySelector('#track-tab input[type="text"]');
 
-  // Notification function (same as yours)
+  // Notification function
   function showNotification(message, type = "success") {
     const container = document.querySelector(".shipping-form");
     if (!container) return;
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showNotification("Order Booked Successfully");
 
         setTimeout(() => {
-          window.location.href = "../Delivery/Delivery.html";
+          window.location.href = "../../Delivery/Delivery.html";
         }, 2000);
       }, 800);
     });
@@ -146,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showNotification("Tracking started...");
 
         setTimeout(() => {
-          window.location.href = "../TrackOrder/TrackOrder.html";
+          window.location.href = "../../TrackOrder/TrackOrder.html";
         }, 2000);
       }, 800);
     });
@@ -155,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Track Order JS Loaded");
 });
 
-
+/* Services Button */
 const learnMoreButtons = document.querySelectorAll(".learnMoreBtn");
 
 learnMoreButtons.forEach((btn) => {
@@ -164,4 +163,3 @@ learnMoreButtons.forEach((btn) => {
     window.location.href = targetPage;
   });
 });
-

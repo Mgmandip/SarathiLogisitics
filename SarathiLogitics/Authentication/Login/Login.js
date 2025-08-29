@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         animation: slideIn 0.3s ease-out;
     `;
 
-    // Add keyframes only once
     if (!document.querySelector("#notification-styles")) {
       const style = document.createElement("style");
       style.id = "notification-styles";

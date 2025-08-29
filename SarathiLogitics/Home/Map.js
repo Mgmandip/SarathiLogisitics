@@ -1,6 +1,6 @@
 let map, marker, activeInput, autocomplete, infoWindow, searchBox;
 
-function initMap(lat = 27.7172, lng = 85.3240) {
+function initMap(lat = 27.7172, lng = 85.324) {
   const center = { lat, lng };
 
   map = new google.maps.Map(document.getElementById("map"), {
@@ -21,7 +21,7 @@ function initMap(lat = 27.7172, lng = 85.3240) {
     marker.setPosition(event.latLng);
   });
 
-  /* ------------------ 📍 Current Location Button ------------------ */
+  /* Current Location Button */
   const locationButton = document.createElement("div");
   locationButton.style.backgroundColor = "#fff";
   locationButton.style.border = "2px solid #fff";
@@ -38,7 +38,7 @@ function initMap(lat = 27.7172, lng = 85.3240) {
   const innerCircle = document.createElement("div");
   innerCircle.style.width = "12px";
   innerCircle.style.height = "12px";
-  innerCircle.style.background = "#fff"; 
+  innerCircle.style.background = "#fff";
   innerCircle.style.borderRadius = "50%";
   innerCircle.style.boxShadow = "0 0 0 4px rgba(161, 162, 163, 0.6)";
   locationButton.appendChild(innerCircle);
@@ -56,9 +56,9 @@ function initMap(lat = 27.7172, lng = 85.3240) {
 
           marker.setPosition(pos);
           map.setCenter(pos);
-          
-          innerCircle.style.background  = "#4285F4";
-          innerCircle.style.boxShadow = "0 0 0 4px rgba(130, 187, 244, 0.6)"; 
+
+          innerCircle.style.background = "#4285F4";
+          innerCircle.style.boxShadow = "0 0 0 4px rgba(130, 187, 244, 0.6)";
         },
         () => handleLocationError(true, map.getCenter())
       );
@@ -67,7 +67,7 @@ function initMap(lat = 27.7172, lng = 85.3240) {
     }
   });
 
-  /* Add Search Box */
+  /* Search Box */
   const input = document.createElement("input");
   input.id = "pac-input";
   input.type = "text";
@@ -119,7 +119,7 @@ function initMap(lat = 27.7172, lng = 85.3240) {
         })
       );
 
-      marker.setPosition(place.geometry.location); // move main marker
+      marker.setPosition(place.geometry.location);
 
       if (place.geometry.viewport) bounds.union(place.geometry.viewport);
       else bounds.extend(place.geometry.location);
@@ -165,8 +165,12 @@ function enableAutocomplete(input) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const pickupInput = document.querySelector('input[placeholder="Enter pickup address"]');
-  const deliveryInput = document.querySelector('input[placeholder="Enter delivery address"]');
+  const pickupInput = document.querySelector(
+    'input[placeholder="Enter pickup address"]'
+  );
+  const deliveryInput = document.querySelector(
+    'input[placeholder="Enter delivery address"]'
+  );
 
   const pickupIcon = pickupInput.previousElementSibling;
   const deliveryIcon = deliveryInput.previousElementSibling;
@@ -189,7 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (status === "OK" && results[0]) {
         activeInput.value = results[0].formatted_address;
       } else {
-        activeInput.value = `${marker.getPosition().lat()}, ${marker.getPosition().lng()}`;
+        activeInput.value = `${marker.getPosition().lat()}, ${marker
+          .getPosition()
+          .lng()}`;
       }
     });
     document.getElementById("mapModal").style.display = "none";

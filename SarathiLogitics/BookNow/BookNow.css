@@ -49,7 +49,7 @@ body {
   align-items: center;
 }
 
-.logo{
+.logo {
   height: 2rem;
 }
 
@@ -60,7 +60,7 @@ body {
   transition: color 0.3s;
 }
 
-.nav-link a{
+.nav-link a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -75,26 +75,26 @@ body {
 
 .no-link-style {
   text-decoration: none;
-  color: inherit;  
+  color: inherit;
 }
 
 .no-link-style:visited {
-  color: inherit;       
+  color: inherit;
 }
 
 .no-link-style:hover {
-  color: inherit; 
+  color: inherit;
 }
 
 
 .ship-btn {
   color: var(--white);
   background-color: var(--red-primary);
-  border: 1px solid  var(--red-primary);
+  border: 1px solid var(--red-primary);
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
-  font-weight:bold;
+  font-weight: bold;
   align-items: center;
 }
 
@@ -185,10 +185,10 @@ body {
   margin: 2rem;
   border-radius: 2rem;
   position: relative;
-  min-height: 600px; 
+  min-height: 600px;
 }
 
-.hero .container{
+.hero .container {
   display: flex;
   justify-content: flex-end;
   height: 100%;
@@ -197,14 +197,14 @@ body {
 }
 
 
-.hero-left{
+.hero-left {
   background: linear-gradient(to right, var(--red-primary), rgba(0, 0, 255, 0));
   padding: 2rem;
   max-height: 15rem;
   position: absolute;
   bottom: 0rem;
   left: 0rem;
-  
+
 }
 
 .hero-content {
@@ -229,8 +229,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.hero-slogan{
-  font-weight:700;
+.hero-slogan {
+  font-weight: 700;
 }
 
 .shipping-form {
@@ -298,7 +298,7 @@ body {
   left: 1.4rem;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: auto; 
+  pointer-events: auto;
   color: rgb(8, 166, 8);
   cursor: pointer;
 }
@@ -343,7 +343,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .map-content {
@@ -356,7 +356,7 @@ body {
   max-width: 600px;
 }
 
-.map-content .header{
+.map-content .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -364,7 +364,7 @@ body {
   box-shadow: none;
 }
 
-.header h2{
+.header h2 {
   color: var(--blue-dark);
   font-weight: 500;
 }
@@ -382,7 +382,7 @@ body {
   color: var(--red-primary);
 }
 
-.map-content .button{
+.map-content .button {
   padding-top: 2rem;
 }
 
@@ -390,7 +390,7 @@ body {
   background-color: white;
   border: 2px solid #fff;
   border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   margin: 10px;
   padding: 8px 12px;
@@ -413,7 +413,7 @@ body {
   text-decoration: underline;
 }
 
-#nav-default{
+#nav-default {
   color: var(--red-primary);
 }
 
@@ -486,7 +486,8 @@ body {
 .review {
   position: relative;
   padding: 4rem 2rem;
-  z-index: 1; /* ensure it's above background */
+  z-index: 1;
+  /* ensure it's above background */
 }
 
 .review-container {
@@ -502,7 +503,7 @@ body {
   padding: 2.5rem;
   position: relative;
   z-index: 2;
-  
+
 }
 
 .review-img {
@@ -510,7 +511,7 @@ body {
   height: 22rem;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .review-content {
@@ -575,8 +576,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit:contain;
-  opacity: 0.1; 
+  object-fit: contain;
+  opacity: 0.1;
 }
 
 /* Newsletter */
@@ -760,4 +761,9 @@ footer {
     flex-direction: column;
     gap: 30px;
   }
+}
+
+html,
+body {
+  overflow-x: hidden;
 }

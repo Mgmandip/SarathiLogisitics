@@ -136,8 +136,6 @@ body {
   left: 0;
   z-index: 1000;
   min-width: 210px;
-
-  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -177,7 +175,6 @@ body {
   color: var(--red-primary);
 }
 
-/* Show on hover */
 .services-wrapper:hover .services-list {
   opacity: 1;
   visibility: visible;
@@ -578,7 +575,7 @@ body {
   color: var(--red-primary);
 }
 
-.left-column{
+.left-column {
   margin-left: 4rem;
 }
 
@@ -647,9 +644,9 @@ body {
 .detailed-box {
   margin-top: 1rem;
   padding: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   font-style: italic;
   font-size: 0.95rem;
   transition: transform 0.3s ease;
@@ -841,10 +838,10 @@ body {
 }
 
 .service-detail li {
-    font-size: 0.9rem;
-    color: #667B99;
-    margin-bottom: 0.4rem;
-    position: relative;
+  font-size: 0.9rem;
+  color: #667B99;
+  margin-bottom: 0.4rem;
+  position: relative;
 }
 
 .learnMoreBtn {
@@ -974,11 +971,12 @@ footer {
 /* Overlay */
 .overlay {
   position: fixed;
-  top: 70px; /* height of header */
+  top: 70px;
+  /* height of header */
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -993,7 +991,7 @@ footer {
   text-align: center;
   max-width: 450px;
   width: 90%;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   animation: slideUp 0.4s ease;
 }
 
@@ -1006,7 +1004,8 @@ footer {
 .overlay-content h2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #195A94; /* logistics brand color */
+  color: #195A94;
+  /* logistics brand color */
   margin-bottom: 1rem;
 }
 
@@ -1035,13 +1034,25 @@ footer {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 
@@ -1113,7 +1124,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  .warehousing-image{
+  .warehousing-image {
     max-width: 18rem;
   }
 
@@ -1121,7 +1132,7 @@ footer {
     padding-top: 0rem;
   }
 
-  .section-title{
+  .section-title {
     font-size: 2rem;
   }
 

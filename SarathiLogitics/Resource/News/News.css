@@ -15,6 +15,7 @@ body {
   margin: 0 auto;
   padding: 0px 40px;
 }
+
 /* Colors */
 :root {
   --red-primary: #F04A23;
@@ -48,7 +49,7 @@ body {
   align-items: center;
 }
 
-.logo{
+.logo {
   height: 2rem;
 }
 
@@ -59,7 +60,7 @@ body {
   transition: color 0.3s;
 }
 
-.nav-link a{
+.nav-link a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -74,33 +75,33 @@ body {
 
 .no-link-style {
   text-decoration: none;
-  color: inherit;  
+  color: inherit;
 }
 
 .no-link-style:visited {
-  color: inherit;       
+  color: inherit;
 }
 
 .no-link-style:hover {
-  color: inherit; 
+  color: inherit;
 }
 
 
 .ship-btn {
   color: var(--red-primary);
   background-color: var(--background-color);
-  border: 1px solid  var(--red-primary);
+  border: 1px solid var(--red-primary);
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
-  font-weight:bold;
+  font-weight: bold;
   align-items: center;
 }
 
-.ship-btn:hover{
+.ship-btn:hover {
   color: var(--red-primary);
   background-color: #ffd8ce;
-  border: 1px solid  var(--red-primary);
+  border: 1px solid var(--red-primary);
   transition: 0.4s;
 }
 
@@ -134,8 +135,6 @@ body {
   left: 0;
   z-index: 1000;
   min-width: 210px;
-
-  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -175,7 +174,6 @@ body {
   color: var(--red-primary);
 }
 
-/* Show on hover */
 .services-wrapper:hover .services-list {
   opacity: 1;
   visibility: visible;
@@ -209,7 +207,7 @@ body {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -217,7 +215,7 @@ body {
 
 .news-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .news-image img {
@@ -448,4 +446,9 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+html,
+body {
+  overflow-x: hidden;
 }

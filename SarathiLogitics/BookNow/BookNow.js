@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const deliveryInput = document.querySelector("#deliveryAddress");
   const cnInput = document.querySelector('#track-tab input[type="text"]');
 
-  // Notification function (same as yours)
+  // Notification function
   function showNotification(message, type = "success") {
     const container = document.querySelector(".shipping-form");
     if (!container) return;

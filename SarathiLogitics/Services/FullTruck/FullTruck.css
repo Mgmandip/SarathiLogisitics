@@ -135,8 +135,6 @@ body {
   left: 0;
   z-index: 1000;
   min-width: 210px;
-
-  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -176,7 +174,6 @@ body {
   color: var(--red-primary);
 }
 
-/* Show on hover */
 .services-wrapper:hover .services-list {
   opacity: 1;
   visibility: visible;
@@ -956,7 +953,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  .fulltruck-image{
+  .fulltruck-image {
     max-width: 18rem;
   }
 
@@ -964,7 +961,7 @@ footer {
     padding-top: 0rem;
   }
 
-  .section-title{
+  .section-title {
     font-size: 2rem;
   }
 

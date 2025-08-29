@@ -12,28 +12,21 @@ learnMoreButtons.forEach((btn) => {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   // Form Elements
   const registrationForm = document.querySelector(".shipping-form");
   const submitBtn = document.querySelector(".btn-primary");
 
   // Input Elements
-  const nameInput = document.querySelector(
-    'input[placeholder="Name"]'
-  );
+  const nameInput = document.querySelector('input[placeholder="Name"]');
   const companyInput = document.querySelector(
     'input[placeholder="Company Name"]'
   );
-  const emailInput = document.querySelector(
-    'input[placeholder="Email"]'
-  );
+  const emailInput = document.querySelector('input[placeholder="Email"]');
   const phoneInput = document.querySelector(
     'input[placeholder="Phone Number"]'
   );
-  const addressInput = document.querySelector(
-    'input[placeholder="Address"]'
-  );
+  const addressInput = document.querySelector('input[placeholder="Address"]');
 
   // Utility Functions
   function validateEmail(email) {
@@ -208,18 +201,14 @@ document.addEventListener("DOMContentLoaded", function () {
           "Thank you for contacting us. We’ll get back to you soon."
         );
 
-        [
-          nameInput,
-          companyInput,
-          emailInput,
-          phoneInput,
-          addressInput,
-        ].forEach((input) => {
-          if (input) {
-            input.style.borderColor = "#e5e7eb";
-            input.style.background = "#ffffff";
+        [nameInput, companyInput, emailInput, phoneInput, addressInput].forEach(
+          (input) => {
+            if (input) {
+              input.style.borderColor = "#e5e7eb";
+              input.style.background = "#ffffff";
+            }
           }
-        });
+        );
 
         setTimeout(() => {
           window.location.href = "#";
@@ -230,4 +219,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Registration Page JS Loaded");
 });
-

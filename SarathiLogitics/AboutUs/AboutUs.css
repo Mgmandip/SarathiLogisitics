@@ -195,7 +195,7 @@ body {
 
 .hero-title {
   font-size: 2.5rem;
-  font-weight:500;
+  font-weight: 500;
   line-height: 1.1;
   text-align: center;
 }
@@ -228,7 +228,7 @@ body {
   color: var(--blue-dark);
 }
 
-.detail h2{
+.detail h2 {
   font-weight: 500;
   font-size: 1.2rem;
   color: var(--red-primary);
@@ -253,7 +253,7 @@ body {
   height: 20rem;
   width: auto;
   border-radius: 1rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease;
 }
 
@@ -690,7 +690,7 @@ footer {
   .hero-title {
     font-size: 1.5rem;
   }
-  
+
 
   .aboutus-container {
     padding-inline: 2rem;
@@ -710,7 +710,7 @@ footer {
     height: 15rem;
     width: auto;
     border-radius: 1rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease;
   }
 
@@ -719,7 +719,7 @@ footer {
     flex-direction: row;
   }
 
-  .mission-detail{
+  .mission-detail {
     display: flex;
     flex-direction: column;
   }
@@ -741,13 +741,13 @@ footer {
     gap: 1rem;
     max-width: 26rem;
   }
-  
+
   .team-container {
     padding: 2rem 0.5rem;
     background: #f9f9f9;
     text-align: center;
   }
-  
+
   .team-paragraph {
     padding-inline: 1rem;
     text-align: justify;
@@ -778,8 +778,6 @@ footer {
     font-size: 1.2rem;
     font-weight: 600;
   }
-
-
 
 }
 

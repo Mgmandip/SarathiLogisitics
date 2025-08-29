@@ -135,8 +135,6 @@ body {
   left: 0;
   z-index: 1000;
   min-width: 210px;
-
-  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -176,7 +174,6 @@ body {
   color: var(--red-primary);
 }
 
-/* Show on hover */
 .services-wrapper:hover .services-list {
   opacity: 1;
   visibility: visible;
@@ -567,7 +564,8 @@ body {
 .review {
   position: relative;
   padding: 4rem 2rem;
-  z-index: 1; /* ensure it's above background */
+  z-index: 1;
+  /* ensure it's above background */
 }
 
 .review-container {
@@ -583,7 +581,7 @@ body {
   padding: 2.5rem;
   position: relative;
   z-index: 2;
-  
+
 }
 
 .review-img {
@@ -591,7 +589,7 @@ body {
   height: 22rem;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .review-content {
@@ -656,8 +654,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit:contain;
-  opacity: 0.1; 
+  object-fit: contain;
+  opacity: 0.1;
 }
 
 /* Newsletter */
@@ -997,4 +995,9 @@ footer {
     align-items: center;
     justify-content: center;
   }
+}
+
+html,
+body {
+  overflow-x: hidden;
 }

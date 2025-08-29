@@ -139,8 +139,6 @@ body {
   left: 0;
   z-index: 1000;
   min-width: 210px;
-
-  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -180,7 +178,6 @@ body {
   color: var(--red-primary);
 }
 
-/* Show on hover */
 .services-wrapper:hover .services-list {
   opacity: 1;
   visibility: visible;
@@ -1049,6 +1046,10 @@ footer {
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
   }
+}
 
 
+html,
+body {
+  overflow-x: hidden;
 }

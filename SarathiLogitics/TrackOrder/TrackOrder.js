@@ -3,26 +3,25 @@ function booknow() {
   window.location.href = "../BookNow/BookNow.html";
 }
 
-
 const orderData = {
   sender: {
     name: "Archie Rai",
     contact: "9860377498",
     email: "archierai28@gmail.com",
     address: "Dholahiti, Lalitpur",
-    city: "Lalitpur"
+    city: "Lalitpur",
   },
   receiver: {
     name: "Sujal Thapa",
     contact: "987654321",
     email: "sujalthapa@gmail.com",
     address: "Baneshwor, Kathmandu",
-    city: "Kathmandu"
+    city: "Kathmandu",
   },
   order: {
     item: "Documents",
-    weight: "1kg"
-  }
+    weight: "1kg",
+  },
 };
 
 // Function to render order details
@@ -62,6 +61,7 @@ function renderOrderDetails(order) {
   `;
 }
 
+/* Progress Status */
 document.addEventListener("DOMContentLoaded", () => {
   const circles = document.querySelectorAll(".order-circle");
   const progressFill = document.getElementById("progressFill");
@@ -77,10 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const totalSteps = circles.length;
-  const progressHeight = ((currentStep -1) / (totalSteps -1)) * 90;
+  const progressHeight = ((currentStep - 1) / (totalSteps - 1)) * 90;
   progressFill.style.height = progressHeight + "%";
 });
-
 
 /* Form Validation */
 document.addEventListener("DOMContentLoaded", function () {
@@ -136,10 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
     container.style.position = "relative";
     container.appendChild(notification);
 
-    notification.querySelector(".notification-close").addEventListener("click", () => {
-      notification.style.animation = "slideOut 0.3s ease-in";
-      setTimeout(() => notification.remove(), 300);
-    });
+    notification
+      .querySelector(".notification-close")
+      .addEventListener("click", () => {
+        notification.style.animation = "slideOut 0.3s ease-in";
+        setTimeout(() => notification.remove(), 300);
+      });
 
     setTimeout(() => {
       if (container.contains(notification)) {

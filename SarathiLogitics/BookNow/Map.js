@@ -36,7 +36,7 @@ function enableAutocomplete(input) {
     const place = autocomplete.getPlace();
     if (!place.geometry) return;
 
-    // Update map and marker
+    // Map and Marker
     const location = place.geometry.location;
     if (!map) initMap(location.lat(), location.lng());
     else {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pickupIcon.addEventListener("click", () => openMapForInput(pickupInput));
   deliveryIcon.addEventListener("click", () => openMapForInput(deliveryInput));
 
-  // Enable autocomplete on inputs
+  // Enables autocomplete on inputs
   enableAutocomplete(pickupInput);
   enableAutocomplete(deliveryInput);
 

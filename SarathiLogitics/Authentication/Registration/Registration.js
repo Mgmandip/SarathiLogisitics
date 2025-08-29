@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneInput = document.querySelector(
     'input[placeholder="eg. +977 123 456 789"]'
   );
-  const cityInput = document.querySelector(
-    'select[placeholder="eg. Lalitpur"]'
-  );
+  const cityInput = document.querySelector('input[placeholder="eg. Lalitpur"]');
   const provinceInput = document.querySelector(
     'input[placeholder="eg. Bagmati"]'
   );

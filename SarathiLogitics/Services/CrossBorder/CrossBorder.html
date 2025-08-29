@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="CrossBorder.css">
-  <script src="CrossBorder.js"></script>
+  <script src="Map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNF_cV5pVBX9KvElwvTcboLUb1COJovZw&libraries=places">
+  </script>
   <title>Sarathi Logistics - Delivering Across Nepal</title>
 </head>
 
@@ -46,7 +48,7 @@
                 </li>
                 <!--
                 <li class="list">
-                  <a href="../../SarathiLogitics/Services/CrossBorder/CrossBorder.html" class="no-link-style">
+                  <a href="../CrossBorder/CrossBorder.html" class="no-link-style">
                     <i class="fa-solid fa-ship"></i> Cross Border
                   </a>
                 </li>
@@ -69,7 +71,7 @@
     <div class="main-left">
       <div class="hero-left">
         <h1 class="hero-title">Cross-Border Logistics</h1>
-        <h1 class="hero-subtitle">Nepal to the World – Simplified</h1>
+        <h1 class="hero-subtitle">Efficient. Affordable. Nationwide.</h1>
         <h1 class="hero-detail">
           Expand your business beyond borders with Sarathi Logistics' Cross-Border solutions. Whether it’s India, China,
           or overseas exports, we handle everything from customs clearance to end-to-end delivery.
@@ -93,11 +95,11 @@
               <div class="form-group">
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" id="locationList" placeholder="Enter pickup address" class="form-input">
+                  <input type="text" id="pickupAddress" placeholder="Enter pickup address" class="form-input">
                 </div>
                 <div class="input-wrapper">
                   <i class="fa-solid fa-location-dot"></i>
-                  <input type="text" placeholder="Enter delivery address" class="form-input">
+                  <input type="text" id="deliveryAddress" placeholder="Enter delivery address" class="form-input">
                 </div>
               </div>
               <button class="btn-primary">Book Order</button>
@@ -119,90 +121,118 @@
             </div>
           </div>
 
+          <!-- Map Modal -->
+          <div id="mapModal" class="map-modal">
+            <div class="map-content">
+              <div class="header">
+                <h2>Select Location</h2>
+                <span id="closeMap" class="close-btn">&times;</span>
+              </div>
+              <div id="map"></div>
+              <div class="button">
+                <button id="confirmLocation" class="btn-primary">Confirm Location</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cross Border -->
-  <div class="crossborder-parcel">
-    <div class="detail">
-      <h1>Cross Border Logistics</h1>
-      <p>
-        Cross-Border Logistics refers to the transportation and delivery of goods between countries, involving customs
-        clearance, international shipping regulations, and multi-modal transport systems.
+  <!-- Parttruck -->
+  <section class="parttruck">
+    <div class="parttruck-container">
+      <div class="parttruck-detail">
+        <h2 class="parttruck-title">Cross Border Logistics</h2>
+        <p class="parttruck-text">
+          Cross-Border Logistics refers to the transportation and delivery of goods between countries, involving customs
+          clearance, international shipping regulations, and multi-modal transport systems.
 
-        At Sarathi Logistics, our Cross-Border service helps businesses in Nepal ship and receive goods across
-        international borders, particularly with key trade partners like India, China, and other global markets. We
-        handle the entire process from documentation and customs clearance to cross-border transportation and last-mile
-        delivery.
-        Our experienced cross-border logistics team ensures smooth, compliant, and timely movement of goods, helping
-        Nepali businesses grow beyond national boundaries with confidence.
-      </p>
+          At Sarathi Logistics, our Cross-Border service helps businesses in Nepal ship and receive goods across
+          international borders, particularly with key trade partners like India, China, and other global markets. We
+          handle the entire process from documentation and customs clearance to cross-border transportation and
+          last-mile
+          delivery.
+          Our experienced cross-border logistics team ensures smooth, compliant, and timely movement of goods, helping
+          Nepali businesses grow beyond national boundaries with confidence.
+        </p>
+      </div>
+      <div class="parttruck-image">
+        <img src="../../Assets/CrossSecImg.png" alt="Cross-border Services">
+      </div>
     </div>
-    <img src="../../Assets/CrossSecImg.png" alt="">
-  </div>
+  </section>
+
 
   <!-- How It Works -->
   <section class="how-it-works">
     <div class="container">
-      <h2 class="section-title">How it <span class="text-red">works?</span></h2>
+      <h2 class="section-title">How It <span class="text-red">Works</span></h2>
+
+      <!-- First row -->
       <div class="steps">
         <div class="step">
-          <img src="../../Assets/Step1.png" class="step-img" alt="Schedule pickup">
-          <h3 class="step-title"><span>Schedule</span> a free pickup</h3>
-          <p class="step-desc">Get packages pickup for free from your location. Book courier for yourself or your loved
-            ones online from our website or app.</p>
+          <img src="../../Assets/Step1.png" class="step-img" alt="Book Storage">
+          <h3 class="step-title"><span>Book</span> Online</h3>
+          <p class="step-desc">Choose your location and storage size based on your requirements.</p>
         </div>
+
         <div class="step">
-          <img src="../../Assets/Step2.png" class="step-img" alt="Doorstep service">
-          <h3 class="step-title">We arrive at your <span>doorstep</span></h3>
-          <p class="step-desc">Our partners reach your location within 24 hours of placing the order.</p>
+          <img src="../../Assets/Step2.png" class="step-img" alt="Store Securely">
+          <h3 class="step-title">Pay for<span> Space Used</span> </h3>
+          <p class="step-desc">Get a transparent price estimate instantly.</p>
         </div>
+
         <div class="step">
-          <img src="../../Assets/Step3.png" class="step-img" alt="Delivery tracking">
-          <h3 class="step-title">Sit back and <span>relax</span></h3>
-          <p class="step-desc">Your order will be delivered to the chosen destination. Track them on our website or app.
-          </p>
+          <img src="../../Assets/Step3.png" class="step-img" alt="Manage Inventory">
+          <h3 class="step-title"><span>Nationwide</span> Delivery</h3>
+          <p class="step-desc">Goods are transported and delivered securely.</p>
+        </div>
+
+        <div class="step">
+          <img src="../../Assets/Track.png" class="step-img" alt="Fulfillment">
+          <h3 class="step-title">Track &<span> Confirm</span></h3>
+          <p class="step-desc">Monitor your shipment until it reaches its destination.</p>
         </div>
       </div>
+
+    </div>
     </div>
   </section>
 
+
   <!-- Info -->
   <div class="info-div">
+    <!-- Left Column -->
     <div class="info-container">
-      <h1 class="info-header">Why Choose Express Parcel?</h1>
+      <h1 class="info-header">Why Choose <span>Sarathi Cross Bordering?</span></h1>
 
       <div class="info-details">
-        <!-- Left Column -->
         <div class="left-column">
-          <h1 class="column-header">Ideal for:</h1>
-          <div class="list-detail">
-            <h1><i class="fa-solid fa-circle-check"></i>E-commerce Deliveries</h1>
-            <h1><i class="fa-solid fa-circle-check"></i>Urgent Business Shipments</h1>
-            <h1><i class="fa-solid fa-circle-check"></i>Personal Parcels</h1>
-          </div>
-        </div>
-
-        <div class="left-column">
-          <h1 class="column-header">Why Choose Us?</h1>
-          <div class="list-detail">
-            <h1><i class="fa-solid fa-check"></i>Reliable & Fast Delivery</h1>
-            <h1><i class="fa-solid fa-check"></i>Nationwide Coverage</h1>
-            <h1><i class="fa-solid fa-check"></i>Affordable Pricing</h1>
-          </div>
+          <h2 class="column-header">Ideal for:</h2>
+          <ul class="list-detail">
+            <li><i class="fa-solid fa-circle-check"></i> Businesses shipping small to mid-size consignments</li>
+            <li><i class="fa-solid fa-circle-check"></i> Individuals sending parcels nationwide</li>
+            <li><i class="fa-solid fa-circle-check"></i> Companies requiring frequent deliveries without the cost of a
+              full truck</li>
+          </ul>
         </div>
       </div>
     </div>
 
     <!-- Right Column -->
     <div class="right-column">
-      <h1 class="heading">Send it today.</h1>
-      <h1 class="sub-heading">"From your door to theirs fast, safe, and always on time."</h1>
+      <h1 class="heading">Sarathi Cross Bordering</h1>
+      <h2 class="heading-two">Delivering Value Across Nepal</h2>
+      <p class="sub-heading">
+        With Sarathi Logistics, you get efficiency, affordability, and reliability all in one service. Move your goods
+        with confidence, knowing we handle your cargo as if it were our own.
+      </p>
+
       <div class="detailed-container">
         <div class="detailed-box">
-          <h1>"Nationwide express shipping that reaches both major cities and rural communities."</h1>
+          <p>"Nationwide express shipping that reaches both major cities and rural communities."</p>
         </div>
       </div>
     </div>
@@ -212,123 +242,151 @@
   </div>
 
 
+  <div class="why-us">
+    <h1 class="why-header">Why <span>Choose Us?</span></h1>
 
+    <div class="why-grid">
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Nationwide Reach</h2>
+        <p>From Kathmandu to major cities and towns across Nepal, we connect you to every corner of the country with our
+          growing logistics network.</p>
+      </div>
 
-  <!-- Our Services -->
-  <div class="services-header"></div>
-  <h1 class="header-one">Explore Other <span>Services</span> </h1>
-  <h1 class="header-two">Comprehensive logistics solutions
-    designed to meet every need across Nepal's diverse terrain and business requirements.</h1>
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> On-Demand Fulfillment</h2>
+        <p>We offer quick pickups and hassle-free fulfillment, so your shipments move when you need them to</p>
+      </div>
 
-  <div class="service-wrapper">
-    <div class="back-temple">
-      <img src="../../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
-    </div>
-    <div class="service-div">
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Transparent Pricing</h2>
+        <p>Clear, upfront costs so you know exactly what you’re paying for—no hidden charges.</p>
+      </div>
 
-      <div class="service-container">
-        <div class="service-one" id="one">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Express Delivery</h1>
-            <P>Same-day and next-day delivery across major cities in Nepal with real-time
-              tracking.</P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="service-one" id="two">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Express Delivery</h1>
-            <P>Same-day and next-day delivery across major cities in Nepal with real-time
-              tracking.</P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="service-one" id="three">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Express Delivery</h1>
-            <P>Same-day and next-day delivery across major cities in Nepal with real-time
-              tracking.</P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button">
-              <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="service-one" id="four">
-          <div class="service-detail">
-            <div class="service-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <h1>Express Delivery</h1>
-            <P>Same-day and next-day delivery across major cities in Nepal with real-time
-              tracking.</P>
-            <ul>
-              <li>Same-day delivery</li>
-              <li>GPS tracking</li>
-              <li>SMS notifications</li>
-              <li>Secure handling</li>
-            </ul>
-            <div class="button" id="express-btn">
-              <button>Coming Soon<i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-        </div>
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Flexible Shipment Sizes</h2>
+        <p>Send single packages, multiple parcels, or medium loads without needing to book a full truck.</p>
+      </div>
 
-        <!-- Cross Border -->
-        <!--  
-          <div class="service-one">
-            <div class="service-detail">
-              <div class="service-icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <h1>Cross Border</h1>
-              <P>Same-day and next-day delivery across major cities in Nepal with real-time
-                tracking.</P>
-              <ul>
-                <li>Same-day delivery</li>
-                <li>GPS tracking</li>
-                <li>SMS notifications</li>
-                <li>Secure handling</li>
-              </ul>
-              <div class="button">
-                <button>Learn More<i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
-        -->
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Tracking</h2>
+        <p>Stay updated on the status of your shipment with our easy-to-use tracking system.</p>
+      </div>
+
+      <div class="why-card">
+        <h2><i class="fa-solid fa-check"></i> Peace of Mind</h2>
+        <p>Professional handling, secure transport, and on-time delivery every step of the way.</p>
       </div>
     </div>
   </div>
+
+  <!-- Our Services -->
+  <section class="services-header">
+    <h1 class="header-one">Our <span>Services</span></h1>
+    <h2 class="header-two">
+      Comprehensive logistics solutions designed to meet every need across Nepal's diverse terrain and business
+      requirements.
+    </h2>
+  </section>
+
+  <section class="service-wrapper">
+    <!-- background image -->
+    <div class="back-temple">
+      <img src="../../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background">
+    </div>
+
+    <div class="service-div">
+      <div class="service-container">
+
+        <!-- Service Card 1 -->
+        <div class="service-one" id="one">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-truck"></i>
+            </div>
+            <h1>Full Truckload</h1>
+            <p>From large consignments to time-critical deliveries, Sarathi FTL ensures your business logistics are
+              smooth, transparent, and dependable.</p>
+            <ul>
+              <li>Nationwide Delivery Networky</li>
+              <li>Real-Time Tracking & Updates</li>
+              <li>On-Time & Fast Transit</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn" data-target="../FullTruck/FullTruck.html">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-one" id="two">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+            <h1>Part Truckload</h1>
+            <p>Get efficiency, affordability, and reliability all in one service. Move your goods with confidence,
+              knowing we handle your cargo as if it were our own.</p>
+            <ul>
+              <li>Nationwide Reach</li>
+              <li>On-Demand Fulfillment</li>
+              <li>Transparent Pricing</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn" data-target="../PartTruck/PartTruck.html">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-one" id="three">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <h1>Warehousing</h1>
+            <p>From safe storage to seamless distribution, our warehousing service helps businesses stay efficient,
+              cost-effective, and customer-focused.</p>
+            <ul>
+              <li>Secure & Reliable Storage</li>
+              <li>Strategic Locations</li>
+              <li>Scalable Capacity</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn" data-target="../Warehousing/Warehousing.html">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-one" id="four">
+          <div class="service-detail">
+            <div class="service-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h1>Express Delivery</h1>
+            <p>From safe storage to seamless distribution, our warehousing service helps businesses stay efficient,
+              cost-effective, and customer-focused.</p>
+            <ul>
+              <li>Secure & Reliable Storage</li>
+              <li>Strategic Locations</li>
+              <li>Scalable Capacity</li>
+            </ul>
+            <div class="button">
+              <button class="learnMoreBtn disabled" disabled data-target="../ExpressParcel/ExpressParcel.html">
+                Coming Soon <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <!-- Newsletter -->
@@ -349,7 +407,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-logo">
-        <img src="../../Assets/Logosarathi.png" alt="Sarathi Logo" />
+        <img src="../../Assets/FooterLogo.png" alt="Sarathi Logo" />
         <p class="about-sarathi">Nepal's premier logistics company connecting every corner of the nation with
           reliable,
           fast, and transparent delivery services since 2010.</p>
@@ -386,5 +444,7 @@
   </footer>
 
 </body>
+
+<script src="CrossBorder.js"></script>
 
 </html>

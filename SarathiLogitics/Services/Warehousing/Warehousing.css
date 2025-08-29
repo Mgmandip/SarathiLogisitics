@@ -135,8 +135,6 @@ body {
   left: 0;
   z-index: 1000;
   min-width: 210px;
-
-  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -176,7 +174,6 @@ body {
   color: var(--red-primary);
 }
 
-/* Show on hover */
 .services-wrapper:hover .services-list {
   opacity: 1;
   visibility: visible;
@@ -185,7 +182,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: url("../../Assets/Warehousing.jpg") center/cover no-repeat;
+  background: url("../../Assets/Warehouse.jpg") center/cover no-repeat;
   color: white;
   padding: 0rem;
   overflow: hidden;
@@ -489,7 +486,7 @@ body {
   color: var(--red-primary);
 }
 
-.left-column{
+.left-column {
   margin-left: 4rem;
 }
 
@@ -558,9 +555,9 @@ body {
 .detailed-box {
   margin-top: 1rem;
   padding: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   font-style: italic;
   font-size: 0.95rem;
   transition: transform 0.3s ease;
@@ -752,10 +749,10 @@ body {
 }
 
 .service-detail li {
-    font-size: 0.9rem;
-    color: #667B99;
-    margin-bottom: 0.4rem;
-    position: relative;
+  font-size: 0.9rem;
+  color: #667B99;
+  margin-bottom: 0.4rem;
+  position: relative;
 }
 
 .learnMoreBtn {
@@ -950,7 +947,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  .warehousing-image{
+  .warehousing-image {
     max-width: 18rem;
   }
 
@@ -958,7 +955,7 @@ footer {
     padding-top: 0rem;
   }
 
-  .section-title{
+  .section-title {
     font-size: 2rem;
   }
 

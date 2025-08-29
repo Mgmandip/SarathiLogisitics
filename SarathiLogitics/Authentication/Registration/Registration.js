@@ -1,6 +1,6 @@
 /* Navbar Button */
 function booknow() {
-  window.location.href = "../BookNow/BookNow.html";
+  window.location.href = "../../BookNow/BookNow.html";
 }
 
 document.addEventListener("DOMContentLoaded", function () {

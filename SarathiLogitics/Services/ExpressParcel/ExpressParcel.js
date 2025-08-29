@@ -1,7 +1,12 @@
-
 /* Navbar Button */
 function booknow() {
   window.location.href = "../../BookNow/BookNow.html";
+}
+
+
+/* Back Button */
+function backbtn() {
+  window.location.href = "../../Home/Home.html";
 }
 
 /* Tab Button */

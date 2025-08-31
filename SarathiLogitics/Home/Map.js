@@ -1,69 +1,65 @@
-let map, marker, activeInput, autocomplete, infoWindow, searchBox;
+let mapApp = {
+  map: null,
+  marker: null,
+  activeInput: null,
+  autocomplete: null,
+  infoWindow: null,
+  searchBox: null,
+};
 
 function initMap(lat = 27.7172, lng = 85.324) {
+  if (mapApp.map) return; // prevent multiple re-initializations
+
   const center = { lat, lng };
 
-  map = new google.maps.Map(document.getElementById("map"), {
+  mapApp.map = new google.maps.Map(document.getElementById("map"), {
     center,
     zoom: 14,
   });
 
-  marker = new google.maps.Marker({
+  mapApp.marker = new google.maps.Marker({
     position: center,
-    map,
+    map: mapApp.map,
     draggable: true,
   });
 
-  infoWindow = new google.maps.InfoWindow();
+  mapApp.infoWindow = new google.maps.InfoWindow();
 
-  // Click to set marker position
-  google.maps.event.addListener(map, "click", (event) => {
-    marker.setPosition(event.latLng);
+  // Click to set marker
+  google.maps.event.addListener(mapApp.map, "click", (event) => {
+    mapApp.marker.setPosition(event.latLng);
   });
 
   /* Current Location Button */
   const locationButton = document.createElement("div");
-  locationButton.style.backgroundColor = "#fff";
-  locationButton.style.border = "2px solid #fff";
-  locationButton.style.borderRadius = "50%";
-  locationButton.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
-  locationButton.style.cursor = "pointer";
-  locationButton.style.margin = "10px";
-  locationButton.style.width = "40px";
-  locationButton.style.height = "40px";
-  locationButton.style.display = "flex";
-  locationButton.style.alignItems = "center";
-  locationButton.style.justifyContent = "center";
-
+  locationButton.style.cssText = `
+    background: #fff; border: 2px solid #fff; border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;
+    margin: 10px; width: 40px; height: 40px; display: flex;
+    align-items: center; justify-content: center;
+  `;
   const innerCircle = document.createElement("div");
-  innerCircle.style.width = "12px";
-  innerCircle.style.height = "12px";
-  innerCircle.style.background = "#fff";
-  innerCircle.style.borderRadius = "50%";
-  innerCircle.style.boxShadow = "0 0 0 4px rgba(161, 162, 163, 0.6)";
+  innerCircle.style.cssText = `
+    width: 12px; height: 12px; background: #fff; border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(161,162,163,0.6);
+  `;
   locationButton.appendChild(innerCircle);
-
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(locationButton);
+  mapApp.map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(locationButton);
 
   locationButton.addEventListener("click", () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          marker.setPosition(pos);
-          map.setCenter(pos);
-
+        (pos) => {
+          const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+          mapApp.marker.setPosition(coords);
+          mapApp.map.setCenter(coords);
           innerCircle.style.background = "#4285F4";
-          innerCircle.style.boxShadow = "0 0 0 4px rgba(130, 187, 244, 0.6)";
+          innerCircle.style.boxShadow = "0 0 0 4px rgba(130,187,244,0.6)";
         },
-        () => handleLocationError(true, map.getCenter())
+        () => handleLocationError(true, mapApp.map.getCenter())
       );
     } else {
-      handleLocationError(false, map.getCenter());
+      handleLocationError(false, mapApp.map.getCenter());
     }
   });
 
@@ -73,80 +69,76 @@ function initMap(lat = 27.7172, lng = 85.324) {
   input.type = "text";
   input.placeholder = "Search location...";
   input.style.cssText = `
-    box-sizing: border-box;
+    box-sizing: border-box; 
     border: 1px solid transparent;
-    width: 240px;
-    height: 32px;
+    width: 240px; 
+    height: 32px; 
     margin-top: 3.5rem;
-    padding: 1.2rem 1rem;
-    border-radius: 5rem;
+    padding: 1.2rem 1rem; 
+    border-radius: 5rem; 
     font-size: 14px;
-    outline: none;
-    text-overflow: ellipsis;
-    position: relative;
-    z-index: 5;
-    right: 10px;
-    top: 0px;
-    left: 0;
+    outline: none; 
+    position: relative; 
+    z-index: 5; 
+    right: 10px; 
+    top: 0px; 
+    left: 0; 
     margin-left: 0.5rem;
   `;
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
+  mapApp.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
 
-  searchBox = new google.maps.places.SearchBox(input);
+  mapApp.searchBox = new google.maps.places.SearchBox(input);
 
-  map.addListener("bounds_changed", () => {
-    searchBox.setBounds(map.getBounds());
+  mapApp.map.addListener("bounds_changed", () => {
+    mapApp.searchBox.setBounds(mapApp.map.getBounds());
   });
 
   let markers = [];
-
-  searchBox.addListener("places_changed", () => {
-    const places = searchBox.getPlaces();
-    if (places.length === 0) return;
+  mapApp.searchBox.addListener("places_changed", () => {
+    const places = mapApp.searchBox.getPlaces();
+    if (!places.length) return;
 
     markers.forEach((m) => m.setMap(null));
     markers = [];
 
     const bounds = new google.maps.LatLngBounds();
     places.forEach((place) => {
-      if (!place.geometry || !place.geometry.location) return;
+      if (!place.geometry?.location) return;
 
       markers.push(
         new google.maps.Marker({
-          map,
+          map: mapApp.map,
           title: place.name,
           position: place.geometry.location,
         })
       );
 
-      marker.setPosition(place.geometry.location);
-
+      mapApp.marker.setPosition(place.geometry.location);
       if (place.geometry.viewport) bounds.union(place.geometry.viewport);
       else bounds.extend(place.geometry.location);
     });
-    map.fitBounds(bounds);
+    mapApp.map.fitBounds(bounds);
   });
 }
 
 function handleLocationError(browserHasGeolocation, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
+  mapApp.infoWindow.setPosition(pos);
+  mapApp.infoWindow.setContent(
     browserHasGeolocation
       ? "❌ Error: The Geolocation service failed."
       : "❌ Error: Your browser doesn’t support geolocation."
   );
-  infoWindow.open(map);
+  mapApp.infoWindow.open(mapApp.map);
 }
 
 function openMapForInput(input) {
-  activeInput = input;
+  mapApp.activeInput = input;
   document.getElementById("mapModal").style.display = "block";
   setTimeout(() => initMap(), 200);
 }
 
-// Enable Places Autocomplete for pickup/delivery inputs
 function enableAutocomplete(input) {
-  autocomplete = new google.maps.places.Autocomplete(input, {
+  const autocomplete = new google.maps.places.Autocomplete(input, {
     fields: ["formatted_address", "geometry"],
     componentRestrictions: { country: "np" },
   });
@@ -156,27 +148,20 @@ function enableAutocomplete(input) {
     if (!place.geometry) return;
 
     const location = place.geometry.location;
-    if (!map) initMap(location.lat(), location.lng());
+    if (!mapApp.map) initMap(location.lat(), location.lng());
     else {
-      map.setCenter(location);
-      marker.setPosition(location);
+      mapApp.map.setCenter(location);
+      mapApp.marker.setPosition(location);
     }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const pickupInput = document.querySelector(
-    'input[placeholder="Enter pickup address"]'
-  );
-  const deliveryInput = document.querySelector(
-    'input[placeholder="Enter delivery address"]'
-  );
+  const pickupInput = document.getElementById("pickupAddress");
+  const deliveryInput = document.getElementById("deliveryAddress");
 
-  const pickupIcon = pickupInput.previousElementSibling;
-  const deliveryIcon = deliveryInput.previousElementSibling;
-
-  pickupIcon.addEventListener("click", () => openMapForInput(pickupInput));
-  deliveryIcon.addEventListener("click", () => openMapForInput(deliveryInput));
+  pickupInput.previousElementSibling.addEventListener("click", () => openMapForInput(pickupInput));
+  deliveryInput.previousElementSibling.addEventListener("click", () => openMapForInput(deliveryInput));
 
   enableAutocomplete(pickupInput);
   enableAutocomplete(deliveryInput);
@@ -189,13 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Confirm location button
   document.getElementById("confirmLocation").addEventListener("click", () => {
     const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ location: marker.getPosition() }, (results, status) => {
+    geocoder.geocode({ location: mapApp.marker.getPosition() }, (results, status) => {
       if (status === "OK" && results[0]) {
-        activeInput.value = results[0].formatted_address;
+        mapApp.activeInput.value = results[0].formatted_address;
       } else {
-        activeInput.value = `${marker.getPosition().lat()}, ${marker
-          .getPosition()
-          .lng()}`;
+        mapApp.activeInput.value = `${mapApp.marker.getPosition().lat()}, ${mapApp.marker.getPosition().lng()}`;
       }
     });
     document.getElementById("mapModal").style.display = "none";

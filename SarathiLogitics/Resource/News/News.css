@@ -105,15 +105,6 @@ body {
   transition: 0.4s;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #333;
-}
-
 /* Services */
 .services-wrapper {
   position: relative;
@@ -187,6 +178,15 @@ body {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
 }
 
 /* News Section */
@@ -474,6 +474,16 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .news-container {
+    padding: 1rem 1rem;
+}
 }
 
 html,

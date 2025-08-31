@@ -435,6 +435,10 @@ footer {
   }
 
   .hero-left {
+    padding-inline: 0rem;
+  }
+
+  .hero-left p{
     padding-inline: 2rem;
   }
 

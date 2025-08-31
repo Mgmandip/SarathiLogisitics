@@ -981,7 +981,6 @@ footer {
 .overlay {
   position: fixed;
   top: 70px;
-  /* height of header */
   left: 0;
   right: 0;
   bottom: 0;
@@ -1253,7 +1252,7 @@ footer {
     background: #fff;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 200;
+    z-index: 2000;
   }
 
   /* When active */
@@ -1417,6 +1416,19 @@ footer {
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
   }
+
+  .overlay-content {
+    background: #fff;
+    padding: 2.5rem 3rem;
+    margin-bottom: rem;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.4s ease;
+  }
+
 }
 
 html,

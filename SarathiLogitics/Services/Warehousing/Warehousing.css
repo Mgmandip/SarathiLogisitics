@@ -1230,7 +1230,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding-inline: 5rem;
 
   }
 
@@ -1249,6 +1248,11 @@ footer {
     background-color: #F4F7FA;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
+  }
+
+  
+  .service-detail p {
+    margin: 0.75rem 0.5rem;
   }
 }
 

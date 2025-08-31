@@ -1095,6 +1095,22 @@ footer {
     justify-content: center;
     margin: 1rem;
     align-items: center;
+    background: none;
+    overflow: visible;
+    max-height: 600px;
+    min-height: 600px;
+  }
+
+  .fulltruck-image{
+    display: none;
+  }
+
+  .fulltruck-title {
+    text-align: center;
+  }
+
+  .fullttruck-text{
+    text-align: justify;
   }
 
   .hero-left {
@@ -1226,8 +1242,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding-inline: 5rem;
-
   }
 
   .bg-temple {
@@ -1245,6 +1259,10 @@ footer {
     background-color: #F4F7FA;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
+  }
+
+  .service-detail p {
+    margin: 0.75rem 0.5rem;
   }
 }
 

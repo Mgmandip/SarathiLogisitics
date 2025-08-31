@@ -895,32 +895,104 @@ footer {
 }
 
 @media (max-width: 480px) {
+  /* Navigation */
   .nav-menu {
+    display: none;
+    flex-direction: column;
+    font-size: 1.1rem;
+    gap: 1.5rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 200;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0.5rem 0;
+    padding: 1rem 0;
+    background: none;
+    border-radius: 0;
+    margin-inline: 0rem;  
+  }
+
+  .hero-left,
+  .hero-content {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+  }
+
+  /* Form / Shipping */
+  .shipping-form {
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-wrap: wrap;       
+    gap: 0.5rem;
+    align-items: center;  
+  }
+
+  .form-input {
+    flex: 1 1 200px;      
+    padding: 0.7rem 1rem;
+    min-width: 150px;     
+    border-radius: 0.5rem;
+  }
+
+  .primary-btn {
+    flex: 0 0 auto;        
+    padding: 0.8rem 0.1rem;
+    padding-inline: 0.4rem;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+
+  /* Order Details */
+  .order-details {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .orderstatus {
     display: none;
   }
 
-  .hero {
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
-    align-items: center;
-    padding: 0rem 0;
-    background: none;
-    margin-inline: 0rem;
+  .tracking-container {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-
-  .hero-content {
+  .tracking-label {
     text-align: left;
   }
 
-  .container {
-    padding-inline: 1rem;
-  }
-
+  /* Section Titles */
   .form-header .main {
-    display: flex;
-    font-size: x-large;
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .form-header .sec-main {
@@ -928,106 +1000,58 @@ footer {
   }
 
   .order-header h1 {
-    font-size: x-large;
+    font-size: 1.5rem;
   }
 
-  .tracking-container {
-    gap: 0rem;
-  }
-
-  .tracking-label {
-    justify-content: start;
-  }
-
-  .shipping-form {
-    padding: 1rem;
-    box-shadow: 1 5px 15px 1px rgba(0, 0, 0, 0.25);
-  }
-
-  .input-wrapper {
-    gap: 0px;
-  }
-
-  .form-input {
-    width: 95%;
-  }
-
-  .primary-btn {
-    font-size: small;
-    padding: 0.7rem;
-  }
-
-  .order-details {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .orderstatus {
-    display: none;
-  }
-
-  .sender-header {
-    font-size: larger;
-  }
-
-  .receiver-header {
-    font-size: larger;
-  }
-
+  .sender-header,
+  .receiver-header,
   .orderitem-header {
-    font-size: larger;
+    font-size: 1.2rem;
   }
 
+  /* How It Works */
   .how-it-works {
-    padding: 2rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .container {
-    justify-content: center;
+    padding: 2rem 1rem;
   }
 
   .steps {
-    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 5rem;
   }
 
   .step {
+    max-width: 100%;
     text-align: center;
   }
 
-  .review-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Testimonials / Reviews */
+  .review-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
   }
 
-  .review-container img {
+  .review-img {
     display: none;
   }
 
   .review-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    align-items: center;
   }
 
   .review-header {
-    display: flex;
-    align-items: center;
     justify-content: center;
   }
+
+  /* Container adjustments */
+  .container {
+    padding: 0 1rem;
+  }
 }
+
 
 html,
 body {

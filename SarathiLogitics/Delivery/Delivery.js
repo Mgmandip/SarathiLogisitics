@@ -3,6 +3,10 @@ function booknow() {
   window.location.href = "../BookNow/BookNow.html";
 }
 
+function backhome() {
+  window.location.href = "../Home/Home.html";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Form Elements
   const registrationForm = document.querySelector(".shipping-form");

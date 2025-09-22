@@ -1,24 +1,3 @@
-:root {
-  --red-primary: #F04A23;
-  --orange-accent: #fd7e1e;
-  --blue-dark: #0B243F;
-  --gray-light: #d1d5db;
-  --gray-medium: #737b7d;
-  --gray-dark: #333333;
-  --white: #ffffff;
-  --footer-border: #ffffff30;
-  --text-placeholder: #b9b9b9;
-  --text-muted: #cccccc;
-  --bg-light: #fef2f2;
-  --border-light: #e5e7eb;
-  --grey-color: #d1d5db;
-  --background-color: #f0f0f0;
-}
-
-:root {
-  scroll-behavior: smooth;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -26,20 +5,26 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: var(--gray-dark);
-  background-color: var(--background-color);
+  color: #333;
+  background-color: #f0f0f0;
 }
 
 .container {
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0px 40px;
 }
 
-::placeholder {
-  color: var(--text-placeholder);
-  opacity: 1;
+/* Colors */
+:root {
+  --red-primary: #F04A23;
+  --blue-dark: #0B243F;
+  --gray-light: #F9FAFB;
+  --gray-medium: #6B7280;
+  --white: #FFFFFF;
+  --grey-color: #d1d5db;
+  --background-color: #f0f0f0;
 }
 
 /* Header */
@@ -204,123 +189,147 @@ body {
   color: #333;
 }
 
-/* Hero Section */
-.hero {
-  display: flex;
-  padding: 1.5rem 10rem;
-}
-
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.hero-left h1 span {
-  color: var(--red-primary);
-}
-
-.hero-detail h1 {
-  font-size: medium;
-  font-weight: 400;
-  padding-top: 1rem;
-}
-
-.hero-detail i {
-  color: var(--orange-accent);
-  padding-right: 1rem;
-}
-
-.hero-left img {
-  height: 20rem;
-}
-
-.form {
-  padding-inline: 2rem;
-}
-
-/* Shipping Form */
-.shipping-form {
-  background: var(--white);
-  color: var(--gray-dark);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.shipping-form h1 {
-  font-weight: 500;
-}
-
-.shipping-form h1 span {
-  color: var(--red-primary);
-}
-
-.info {
-  font-size: medium;
-  color: var(--gray-medium);
-  font-weight: 400;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.input-wrapper {
+/* News Section */
+.news-section-wrapper {
   position: relative;
-  margin: 1rem 0;
-}
-
-.form-input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--border-light);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: vertical;
-  transition: border-color 0.3s ease;
+  overflow: hidden;
+  margin-top: 3rem;
 }
 
-.form-input:focus {
-  outline: none;
-  border-color: var(--red-primary);
+.news-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
 }
 
-.btn-primary {
+.bg-temple {
+  z-index: 2;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.75rem;
-  background: linear-gradient(to right, #fa4516, #ff5959);
-  color: var(--white);
-  border: none;
-  border-radius: 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  min-height: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.15;
+  display: block;
 }
 
-.btn-primary:hover {
-  background: var(--orange-accent);
+.news-content-article {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
+
+.news-article-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.newsletter-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.article-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.article-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #195A94;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.article-meta i {
+  color: var(--red-primary);
+}
+
+.article-content{
+  text-align:center;
+}
+
+.img{
+  width:100%; 
+  height: 100%;
+  border-radius:8px;
+}
+
+.imgone, .imgtwo{
+  height: 20rem; 
+  border-radius:8px;
+  text-align: left;
+}
+
+.article-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.article-content blockquote {
+  font-style: italic;
+  color: #195A94;
+  border-left: 4px solid var(--red-primary);
+  padding-left: 1rem;
+  margin: 2rem 0;
+}
+
+.benefits-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.image-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
 
 /* Newsletter */
 .newsletter {
+  position: relative;
   background: var(--red-primary);
   color: var(--white);
   text-align: center;
+  padding: 3rem 2rem;
 }
 
 .newsletter-inside {
-  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-inside h1 {
+  margin-bottom: 1rem;
+}
+
+.newsletter-inside p {
+  margin-bottom: 2rem;
 }
 
 .newsletter-submit {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding-top: 10px;
+  flex-wrap: wrap;
 }
 
 .newsletter input {
@@ -328,6 +337,7 @@ body {
   border: none;
   border-radius: 5px;
   width: 250px;
+  font-size: 1rem;
 }
 
 .newsletter-btn {
@@ -337,10 +347,17 @@ body {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.newsletter-btn:hover {
+  background-color: var(--blue-dark);
 }
 
 /* Footer */
 footer {
+  position: relative;
   background-color: var(--blue-dark);
   color: var(--white);
   padding: 40px 20px 10px;
@@ -361,42 +378,57 @@ footer {
 }
 
 .about-sarathi {
-  width: 300px;
-  color: var(--gray-light);
+  max-width: 300px;
+  color: var(--gray-color);
+  line-height: 1.6;
+}
+
+.footer-links h3,
+.footer-services h3,
+.footer-contact h3 {
+  margin-bottom: 1rem;
+  color: var(--white);
 }
 
 .footer-links ul,
 .footer-services ul {
   list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.footer-services li {
+  margin-bottom: 0.5rem;
 }
 
 .footer-links a,
 .footer-services a {
-  color: var(--gray-light);
+  color: var(--grey-color);
   text-decoration: none;
   font-size: 16px;
+  transition: color 0.3s;
 }
 
 .footer-links a:hover,
 .footer-services a:hover {
+  color: var(--white);
   text-decoration: underline;
 }
 
 .footer-contact p {
-  margin: 0;
-  color: var(--gray-light);
+  margin: 0.5rem 0;
+  color: var(--grey-color);
 }
 
 .footer-bottom {
   text-align: center;
   font-size: 14px;
-  border-top: 1px solid var(--footer-border);
-  color: var(--text-muted);
-  margin-top: 30px;
-  padding-top: 20px;
+  border-top: 1px solid #ffffff30;
+  padding-top: 1rem;
+  color: #ccc;
+  margin-top: 20px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
    .menu-toggle {
     display: block;
@@ -425,74 +457,56 @@ footer {
     display: flex;
   }
 
-  .hero {
-    padding-inline: 0rem;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-left {
-    padding-inline: 0rem;
-  }
-
-  .hero-left p{
+  .news-section-wrapper {
     padding-inline: 2rem;
   }
 
-  .newsletter-submit {
-    flex-direction: column;
-    align-items: center;
+  .article-title {
+    font-size: 1.5rem;
   }
 
-  .newsletter input {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 10px;
+  .article-content p {
+    font-size: 1rem;
   }
 
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
+  .back-temple {
+    display: none;
   }
 
-  .about-sarathi {
-    width: 100%;
-  }
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
-  .container {
-    padding: 0 20px;
-  }
-
+/* Responsive Design */
+@media (max-width: 480px) {
   .nav-menu {
-    gap: 1.5rem;
-    font-size: 0.95rem;
+    display: none;
   }
 
-  .hero {
-    padding: 1.5rem 2rem;
+  .news-section-wrapper {
+    padding-inline: 2rem;
   }
 
-  .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  .article-title {
+    font-size: 1.5rem;
   }
 
-  .hero-left img {
-    height: 16rem;
+  .article-content p {
+    font-size: 1rem;
   }
 
-  .shipping-form {
-    padding: 1.5rem;
+  .back-temple {
+    display: none;
   }
 
-  .footer-container {
-    gap: 40px;
+  .imgone{
+    height: 10rem; 
+    border-radius:8px;
+  }  
+  
+  .imgtwo{
+    height: 12rem; 
+    border-radius:8px;
   }
+
 }
 
 html,

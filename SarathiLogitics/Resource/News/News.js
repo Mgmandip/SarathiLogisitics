@@ -1,9 +1,10 @@
-document.querySelectorAll(".readmorebtn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    window.location.href = './Detail.html';
-  });
-});
+function newsbtn() {
+  window.location.href = "./Detail.html";
+}
 
+function blogbtn() {
+  window.location.href = "./Blog.html";
+}
 
 function booknow() {
   window.location.href = "../../BookNow/BookNow.html";

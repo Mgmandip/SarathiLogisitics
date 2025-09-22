@@ -8,7 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #fef2f2;
+  background-color: #f0f0f0;
 }
 
 .container {
@@ -24,12 +24,12 @@ body {
   --gray-medium: #6B7280;
   --white: #FFFFFF;
   --grey-color: #d1d5db;
-  --background-color: #FEF2F2;
+  --background-color: #f0f0f0;
 }
 
 /* Header */
 .header {
-  background-color: var(--background-color);
+  background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -301,6 +301,17 @@ body {
   margin-top: 1rem;
 }
 
+.input-wrapper .map-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  height: 1.8rem;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  color: rgb(8, 166, 8);
+  cursor: pointer;
+}
+
 .input-wrapper i {
   position: absolute;
   left: 1.4rem;
@@ -428,7 +439,7 @@ body {
 /* How It Works */
 .how-it-works {
   padding: 6rem 1rem;
-  background: #fafafa;
+  background: #f0f0f0;
 }
 
 .section-title {
@@ -582,10 +593,12 @@ body {
 /* Background */
 .bg-temple {
   position: absolute;
+  left: 0;
+  top: 55%;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  opacity: 0.1;
+  opacity: 0.15;
+  z-index: 0;
 }
 
 /* Newsletter */
@@ -594,6 +607,9 @@ body {
   color: var(--white);
   text-align: center;
   padding: 3rem 2rem;
+  margin-top: 18rem;
+  position: relative;
+  z-index: 1;
 }
 
 .newsletter-inside {
@@ -804,25 +820,68 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0px;
+@media (max-width: 480px) {  
+.nav-menu {
+    display: none;
   }
 
-  .hero{
-    background-image: none;
-    margin: 0rem;
-    margin-inline: 1rem;
-    padding: 4rem 0;    
-     min-height: 0px;
+  .hero {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1.5rem 0;
+    overflow: visible;    
+    min-height: 0px;
   }
 
-  .hero-content{
+  .hero-left {
+    padding: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-slogan {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .hero .container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-content {
     padding-right: 0rem;
+    align-items: normal;
   }
 
-  .shipping-form{
-    width: 24rem;
+  .shipping-form {
+    width: 25rem;
+    padding: 2rem;
+  }
+
+  .how-it-works {
+    margin-top: 2rem;
+    padding: 0rem 1rem;
+  }
+
+  .newsletter {
+    margin-top: 0rem;
   }
   
 }

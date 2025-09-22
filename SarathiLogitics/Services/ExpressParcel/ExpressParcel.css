@@ -313,6 +313,17 @@ body {
   margin-top: 1rem;
 }
 
+.input-wrapper .map-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  height: 1.8rem;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  color: rgb(8, 166, 8);
+  cursor: pointer;
+}
+
 .input-wrapper i {
   position: absolute;
   left: 1.4rem;
@@ -771,6 +782,7 @@ body {
 .bg-temple {
   position: absolute;
   left: 0;
+  top: 70%;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -890,6 +902,7 @@ body {
   background: #F15627;
   color: white;
   text-align: center;
+  margin-top: 20rem;
 }
 
 .newsletter-inside {
@@ -1304,7 +1317,7 @@ footer {
   }
 
   .shipping-form {
-    max-width: 25rem;
+    max-width: 24rem;
     margin: 0 auto;
   }
 
@@ -1387,6 +1400,27 @@ footer {
     gap: 1rem;
   }
 
+   .carousel-dotstwo {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 8px;
+  }
+
+  .carousel-dotstwo button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .carousel-dotstwo button.active {
+    background: var(--red-primary);
+  }
+
   .services-header {
     padding-top: 1rem;
     padding-inline: 3rem;
@@ -1394,10 +1428,15 @@ footer {
 
   .service-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 3rem;
-    padding-inline: 5rem;
+    overflow-x: auto;  
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+  }
 
+  .service-container::-webkit-scrollbar {
+    display: none; 
   }
 
   .bg-temple {
@@ -1411,10 +1450,14 @@ footer {
 
   .service-one {
     height: 25rem;
-    width: 20rem;
+    width: 30rem;
     background-color: #F4F7FA;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
+  }
+  
+  .service-detail p {
+    width: 21rem;
   }
 
   .overlay-content {
@@ -1427,6 +1470,10 @@ footer {
     width: 90%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     animation: slideUp 0.4s ease;
+  }
+
+  .newsletter {
+    margin-top: 1rem;
   }
 
 }

@@ -3,6 +3,10 @@ function booknow() {
   window.location.href = "../BookNow/BookNow.html";
 }
 
+function backhome() {
+  window.location.href = "../Home/Home.html";
+}
+
 const orderData = {
   sender: {
     name: "Archie Rai",
@@ -66,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const circles = document.querySelectorAll(".order-circle");
   const progressFill = document.getElementById("progressFill");
 
-  let currentStep = 1; // number of active steps (1-5)
+  let currentStep = 3; // number of active steps (1-5)
 
   circles.forEach((circle, index) => {
     if (index < currentStep) {
@@ -109,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         position: absolute;
         top: 10px;
         right: 10px;
-        background: ${type === "success" ? "#10b981" : "#ef4444"};
+        background: ${type === "success" ? "#oB243F" : "#ef4444"};
         color: white;
         padding: 12px 16px;
         border-radius: 8px;

@@ -189,109 +189,204 @@ body {
   color: #333;
 }
 
-/* News Section */
-.news-container {
-  padding: 4rem 8rem;
-  background: #fafafa;
-}
-
-.newsmain-header {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
+/* Career Section */
+.career-hero {
+  background: linear-gradient(rgba(11, 36, 63, 0.8), rgba(11, 36, 63, 0.8)), url('../Assets/CareerImg.jpg') center/cover no-repeat;
+  color: white;
   text-align: center;
+  padding: 5rem 2rem;
+  margin-bottom: 3rem;
 }
 
-.newsmain-header span {
-  color: var(--red-primary);
+.career-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.news-grid {
+.career-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.career-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.career-container {
+  padding: 2rem 0;
+}
+
+.career-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.career-intro h2 {
+  color: var(--blue-dark);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.career-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--gray-medium);
+  font-size: 1.1rem;
+}
+
+/* Job Listings Grid */
+.job-listings {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-inline: 3rem;
 }
 
-.news-card {
-  background: #fff;
+/* Job Card */
+.job-card {
+  background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
-.news-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+/* Job Header */
+.job-header {
+  background: var(--blue-dark);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
 }
 
-.news-content {
+.job-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.job-department {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Job Details */
+.job-details {
   padding: 1.5rem;
 }
 
-.date {
-  font-size: 0.9rem;
-  color: #777;
+.job-info {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.job-info-item {
   align-items: center;
   gap: 0.5rem;
+  color: var(--gray-medium);
+  font-size: 0.95rem;
+}
+
+.job-info-item i{
+  margin-right: 0.5rem;
+}
+
+.job-description {
+  margin-bottom: 1.5rem;
+  color: var(--gray-medium);
+}
+
+.job-requirements h4 {
+  color: var(--blue-dark);
   margin-bottom: 0.5rem;
 }
 
-.news-title {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #333;
+.requirements-list {
+  padding-left: 1.2rem;
+  color: var(--gray-medium);
 }
 
-.news-detail {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 1.2rem;
+.requirements-list li {
+  margin-bottom: 0.3rem;
 }
 
-.readmorebtn {
-  background: var(--red-primary);
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.readmorebtn:hover {
-  background: #a30b0b;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
+/* Apply Button */
+.apply-btn {
   margin-top: 2rem;
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--red-primary);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.pagination-container {
-  padding: 0.6rem 1.2rem;
-  background: var(--red-primary);
-  color: #fff;
-  border-radius: 6px;
-  font-weight: bold;
+.apply-btn:hover {
+  background: #ca3d1d;
+}
+
+.benefits-section {
+  background: var(--blue-dark);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.benefits-header h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--red-primary);
+}
+
+.benefit-item h3 {
+  margin-bottom: 0.5rem;
 }
 
 
 /* Newsletter */
 .newsletter {
+  position: relative;
   background: var(--red-primary);
   color: var(--white);
   text-align: center;
@@ -343,6 +438,7 @@ body {
 
 /* Footer */
 footer {
+  position: relative;
   background-color: var(--blue-dark);
   color: var(--white);
   padding: 40px 20px 10px;
@@ -364,7 +460,7 @@ footer {
 
 .about-sarathi {
   max-width: 300px;
-  color: var(--grey-colorr);
+  color: var(--gray-color);
   line-height: 1.6;
 }
 
@@ -414,9 +510,8 @@ footer {
   margin-top: 20px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-   .menu-toggle {
+  .menu-toggle {
     display: block;
     font-size: 1.8rem;
     cursor: pointer;
@@ -424,7 +519,7 @@ footer {
   }
 
   .nav-menu {
-    display: none; 
+    display: none;
     flex-direction: column;
     font-size: 1.1rem;
     gap: 2.2rem;
@@ -434,7 +529,7 @@ footer {
     width: 100%;
     background: #fff;
     padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 200;
   }
 
@@ -443,47 +538,57 @@ footer {
     display: flex;
   }
 
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .news-section-wrapper {
+    padding-inline: 2rem;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
+  .article-title {
+    font-size: 1.5rem;
   }
 
-  .testimonial-content {
-    grid-template-columns: 1fr;
+  .article-content p {
+    font-size: 1rem;
   }
 
-  .newsletter-form {
-    flex-direction: column;
+  .back-temple {
+    display: none;
   }
 
-  .steps {
-    grid-template-columns: 1fr;
-  }
-
-  .trust-badges {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .legal-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 }
 
+/* Responsive Design */
 @media (max-width: 480px) {
   .nav-menu {
     display: none;
   }
 
-  .news-container {
-    padding: 1rem 1rem;
-}
+  .news-section-wrapper {
+    padding-inline: 2rem;
+  }
+
+  .article-title {
+    font-size: 1.5rem;
+  }
+
+  .article-content p {
+    font-size: 1rem;
+  }
+
+  .back-temple {
+    display: none;
+  }
+
+  .job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-inline: 1rem;
+  }
+
+  .career-intro p {
+    margin-inline: 1rem;
+  }
+
 }
 
 html,

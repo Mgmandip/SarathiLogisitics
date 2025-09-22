@@ -8,7 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #FEF2F2;
+  background-color: #f0f0f0;
 }
 
 .container {
@@ -24,12 +24,12 @@ body {
   --gray-medium: #6B7280;
   --white: #FFFFFF;
   --grey-color: #d1d5db;
-  --background-color: #FEF2F2;
+  --background-color: #f0f0f0;
 }
 
 /* Header */
 .header {
-  background-color: var(--background-color);
+  background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -89,7 +89,7 @@ body {
 
 .ship-btn {
   color: var(--red-primary);
-  background-color: var(--background-color);
+  background-color: var(--white);
   border: 1px solid var(--red-primary);
   padding: 10px 20px;
   border-radius: 20px;
@@ -227,6 +227,7 @@ body {
 .form-header .sec-main {
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .form-header .sec-main span {
@@ -301,6 +302,7 @@ body {
 .sender-header {
   color: #FF3131;
   font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .sender-information h1 {
@@ -317,6 +319,7 @@ body {
 .receiver-header {
   color: #FF3131;
   font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .receiver-information h1 {
@@ -333,6 +336,7 @@ body {
 .orderitem-header {
   color: #FF3131;
   font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .orderitem-information h1 {
@@ -382,10 +386,15 @@ body {
   border-radius: 2rem;
   font-size: medium;
   font-weight: 500;
-  background-color: #FF3131;
+  background-color: var(--blue-dark);
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #0b396b;
+  transition: 0.4s;
 }
 
 .form-footer {
@@ -420,7 +429,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  gap: 3.6rem;
+  gap: 3.4rem;
   text-align: right;
 }
 
@@ -458,7 +467,7 @@ body {
   transform: translateX(-50%);
   width: 6px;
   height: 0%;
-  background-color: #4caf50;
+  background-color: #1C4644;
   border-radius: 4px;
   z-index: 1;
   transition: height 0.4s ease;
@@ -495,7 +504,7 @@ body {
 
 .order-circle.active .outer-circle,
 .order-circle.active .inner-circle {
-  background-color: #4caf50;
+  background-color: #0f2b46;
 }
 
 .order-circle .inner-circle i {
@@ -507,7 +516,7 @@ body {
 /* How It Works */
 .how-it-works {
   padding: 6rem 1rem;
-  background: #fafafa;
+  background: #f0f0f0;
 }
 
 .section-title {
@@ -574,7 +583,6 @@ body {
   position: relative;
   padding: 4rem 2rem;
   z-index: 1;
-  /* ensure it's above background */
 }
 
 .review-container {
@@ -661,10 +669,12 @@ body {
 /* Background */
 .bg-temple {
   position: absolute;
+  left: 0;
+  top: 55%;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  opacity: 0.1;
+  opacity: 0.15;
+  z-index: 0;
 }
 
 /* Newsletter */
@@ -673,6 +683,9 @@ body {
   color: var(--white);
   text-align: center;
   padding: 3rem 2rem;
+  margin-top: 18rem;
+  position: relative;
+  z-index: 1;
 }
 
 .newsletter-inside {
@@ -797,9 +810,69 @@ footer {
   cursor: pointer;
 }
 
-/* Responsive Design */
+@media (min-width: 1200px) {
+  .hero {
+    margin-inline: 3rem;
+    padding: 2.5rem 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .hero {
+    margin-inline: 1rem;
+    padding: 2rem;
+  }
+
+  .shipping-form {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px; 
+    margin: 0 auto;
+  }
+
+  .tracking-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .form-input {
+    padding: 0.8rem 1rem;
+  }
+
+  .primary-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .order-details {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .orderstatus {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .orderprogess {
+    height: auto;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
-   .menu-toggle {
+  .menu-toggle {
     display: block;
     font-size: 1.8rem;
     cursor: pointer;
@@ -821,20 +894,109 @@ footer {
     z-index: 200;
   }
 
-  /* When active */
   .nav-menu.active {
     display: flex;
   }
 
-  .order-details {
-    padding-top: 10px;
-    display: flex;
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 0;
+    background: none;
+    margin-inline: 0;
+  }
+
+  .shipping-form {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+  }
+
+  .primary-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .tracking-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .order-details {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .orderstatus {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .orderstatus-label {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .orderprogess {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .progress-bar {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 6px;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  .progress-bar-fill {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 6px;
+    width: 50%;
+  }
+
+  .order-circle .outer-circle {
+    height: 40px;
+    width: 40px;
+  }
+
+  .order-circle .inner-circle {
+    height: 25px;
+    width: 25px;
+    border: 2px solid white;
+  }
+
+  .order-circle .inner-circle i {
+    font-size: 0.8rem;
   }
 
   .form-header .sec-main {
@@ -848,185 +1010,12 @@ footer {
 
   .how-it-works {
     padding: 2rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .container {
-    justify-content: center;
   }
 
   .steps {
-    align-items: center;
-    justify-content: center;
     gap: 5rem;
   }
 
-  .step {
-    text-align: center;
-  }
-
-  .review-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .review-container {
-    padding-inline: 4rem;
-  }
-
-  .review-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .review-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-}
-
-@media (max-width: 480px) {
-  /* Navigation */
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    font-size: 1.1rem;
-    gap: 1.5rem;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: #fff;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 200;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  /* Hero */
-  .hero {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0.5rem 0;
-    padding: 1rem 0;
-    background: none;
-    border-radius: 0;
-    margin-inline: 0rem;  
-  }
-
-  .hero-left,
-  .hero-content {
-    width: 100%;
-    text-align: left;
-    padding: 0;
-  }
-
-  /* Form / Shipping */
-  .shipping-form {
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  }
-
-  .input-wrapper {
-    display: flex;
-    flex-wrap: wrap;       
-    gap: 0.5rem;
-    align-items: center;  
-  }
-
-  .form-input {
-    flex: 1 1 200px;      
-    padding: 0.7rem 1rem;
-    min-width: 150px;     
-    border-radius: 0.5rem;
-  }
-
-  .primary-btn {
-    flex: 0 0 auto;        
-    padding: 0.8rem 0.1rem;
-    padding-inline: 0.4rem;
-    font-size: 0.95rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-
-
-  /* Order Details */
-  .order-details {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .orderstatus {
-    display: none;
-  }
-
-  .tracking-container {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .tracking-label {
-    text-align: left;
-  }
-
-  /* Section Titles */
-  .form-header .main {
-    font-size: 1.2rem;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .form-header .sec-main {
-    display: none;
-  }
-
-  .order-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .sender-header,
-  .receiver-header,
-  .orderitem-header {
-    font-size: 1.2rem;
-  }
-
-  /* How It Works */
-  .how-it-works {
-    padding: 2rem 1rem;
-  }
-
-  .steps {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .step {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  /* Testimonials / Reviews */
   .review-container {
     flex-direction: column;
     padding: 1rem;
@@ -1039,19 +1028,44 @@ footer {
 
   .review-content {
     text-align: center;
-    align-items: center;
-  }
-
-  .review-header {
-    justify-content: center;
-  }
-
-  /* Container adjustments */
-  .container {
-    padding: 0 1rem;
   }
 }
 
+@media (max-width: 480px) {
+  .nav-menu {
+    gap: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .form-header .main {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .order-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .orderstatus-label{
+    display: none;
+  }
+
+  .sender-header,
+  .receiver-header,
+  .orderitem-header {
+    font-size: 1.2rem;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .step {
+    max-width: 100%;
+  }
+}
 
 html,
 body {

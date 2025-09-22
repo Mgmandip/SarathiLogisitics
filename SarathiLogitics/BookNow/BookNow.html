@@ -29,20 +29,20 @@
         </div>
 
         <!-- Navigation menu -->
-        <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation" >
+        <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
           <a href="../Home/Home.html" class="nav-link" id="nav-default">Home</a>
           <div class="services-wrapper">
             <a class="nav-link">Services <i class="fa-solid fa-angle-down"></i></a>
             <div class="services-list">
               <ul>
-                <li class="list"><a href="../../SarathiLogitics/Services/ExpressParcel/ExpressParcel.html"
-                    class="no-link-style"><i class="fa-solid fa-box"></i> Express Parcel</a></li>
-                <li class="list"><a href="../../SarathiLogitics/Services/Warehousing/Warehousing.html"
-                    class="no-link-style"><i class="fa-solid fa-warehouse"></i> Warehousing</a></li>
                 <li class="list"><a href="../../SarathiLogitics/Services/PartTruck/PartTruck.html"
                     class="no-link-style"><i class="fa-solid fa-truck"></i> Part Truckload</a></li>
                 <li class="list"><a href="../../SarathiLogitics/Services/FullTruck/FullTruck.html"
                     class="no-link-style"><i class="fas fa-truck-moving"></i> Full Truckload</a></li>
+                <li class="list"><a href="../../SarathiLogitics/Services/Warehousing/Warehousing.html"
+                    class="no-link-style"><i class="fa-solid fa-warehouse"></i> Warehousing</a></li>
+                <li class="list"><a href="../../SarathiLogitics/Services/ExpressParcel/ExpressParcel.html"
+                    class="no-link-style"><i class="fa-solid fa-box"></i> Express Parcel</a></li>
               </ul>
             </div>
           </div>
@@ -75,22 +75,23 @@
               <button class="tab-btn" onclick="switchTab('track')">Track Order</button>
             </div>
 
-            <!-- Book Order Tab -->
+            <!-- Ship Order Tab -->
             <div id="ship-tab" class="tab-content active">
               <h3>Book your order through</h3>
               <div class="form-group">
                 <div class="input-wrapper">
-                  <i class="fa-solid fa-location-dot"></i>
+                  <img src="../Assets/Map.png" alt="Map Icon" class="map-icon">
                   <input type="text" id="pickupAddress" placeholder="Enter pickup address" class="form-input">
                 </div>
                 <div class="input-wrapper">
-                  <i class="fa-solid fa-location-dot"></i>
+                  <img src="../Assets/Map.png" alt="Map Icon" class="map-icon">
                   <input type="text" id="deliveryAddress" placeholder="Enter delivery address" class="form-input">
                 </div>
               </div>
               <button class="btn-primary">Book Order</button>
               <p class="form-footer">
-                <a href="../Authentication/Registration/Registration.html" class="link">Create an account</a> to get your delivery
+                <a href="../Authentication/Registration/Registration.html" class="link">Create an account</a> to get
+                your delivery
               </p>
             </div>
 
@@ -120,8 +121,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -156,9 +155,9 @@
   <!-- Testimonials -->
   <section class="review-wrapper">
     <!-- Background -->
-    <img src="../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background" loading="lazy">
 
     <div class="review">
+      <img src="../Assets/FooterMonuments.png" class="bg-temple" alt="Nepal background" loading="lazy">
       <div class="review-container">
         <!-- Testimonial Image -->
         <img src="../Assets/TestimonialsImg.png" class="review-img" alt="Customer testimonial" loading="lazy">
@@ -189,6 +188,7 @@
     </div>
   </section>
 
+
   <!-- Newsletter -->
   <section class="newsletter-wrapper">
     <section class="newsletter">
@@ -218,7 +218,7 @@
           <li><a href="../Home/Home.html">Home</a></li>
           <li><a href="../TrackOrder/TrackOrder.html">Track Order</a></li>
           <li><a href="../Resource/News/News.html">Resources</a></li>
-          <li><a href="../ContactUs/ContactUs.html">Contact</a></li>
+          <li><a href="../AboutUs/Career.html">Career</a></li>
         </ul>
       </div>
       <div class="footer-services">
@@ -245,6 +245,15 @@
   </footer>
 </body>
 
-<script src="Delivery.js" defer></script>
+<script src="BookNow.js" defer></script>
+<script>
+  /* Menu */
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 
 </html>

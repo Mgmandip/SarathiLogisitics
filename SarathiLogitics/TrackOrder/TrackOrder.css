@@ -918,7 +918,6 @@ footer {
   }
 
   .input-wrapper {
-    flex-direction: column;
     gap: 0.5rem;
     align-items: flex-start;
   }
@@ -1065,6 +1064,16 @@ footer {
   .step {
     max-width: 100%;
   }
+
+  .bg-temple{
+    display: none;
+  }
+
+  .newsletter {
+    margin-top: 0rem;
+  }
+
+
 }
 
 html,

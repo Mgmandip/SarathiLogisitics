@@ -792,6 +792,10 @@ footer {
   .bg-temple {
     display: none;
   }
+
+  .newsletter {
+    margin-top: 0rem;
+  }
 }
 
 
